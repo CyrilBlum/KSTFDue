@@ -1,5 +1,5 @@
 title: Software KST FDü
-description: Installationsanleitungen für Schülerinnen der Kantonsschule Dübendorf (KST FDü)
+description: Installationsanleitungen für Schülerinnen der Kantonsschule Stadelhofen Filiale Dübendorf (KST FDü)
 
 remote_theme: just-the-docs/just-the-docs
 
@@ -9,10 +9,13 @@ baseurl: "/KSTfDu"
 search_enabled: true
 heading_anchors: true
 
-footer_content: "Kantonsschule KSTfDü, © Cyril Blum"
+footer_content: "Kantonsschule Stadelhofen Filiale Dübendorf», © Cyril Blum"
 
 nav_sort: order
 
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+
+# local running: 
+# bundle exec jekyll serve

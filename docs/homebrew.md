@@ -6,11 +6,11 @@ nav_order: 2
 
 # Homebrew (nur macOS)
 
-Homebrew ist der Paketmanager für macOS. Er wird für alle weiteren Installationen auf macOS vorausgesetzt und muss zuerst eingerichtet werden.
+Homebrew ist der Paketmanager für macOS. Er wird für alle weiteren Installationen auf macOS vorausgesetzt und muss zuerst eingerichtet werden. Hierzu benötigen Sie Administratorrechte auf Ihrem MacOS-Benutzerkonto.
 
-**Windows-Nutzerinnen:** Diese Seite ist nicht relevant – bitte direkt zu den fachspezifischen Installationsseiten wechseln.
+**Windows-Nutzer/-innen:** Diese Seite ist nicht relevant – bitte direkt zu den fachspezifischen Installationsseiten wechseln.
 
-Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
+Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 
 ---
 
@@ -22,7 +22,7 @@ Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Das Installationsskript führt durch den gesamten Prozess. Administratorrechte (macOS-Passwort) werden benötigt.
+Das Installationsskript führt durch den gesamten Prozess. Administratorrechte (macOS-Passwort) werden benötigt. Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
 
 ---
 
@@ -38,7 +38,11 @@ Auf neueren Macs mit Apple-Silicon-Chip installiert Homebrew standardmässig nac
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Diesen Block kopieren (**nicht den obigen, sondern den im Terminal angezeigten**) und ebenfalls im Terminal ausführen. Danach das Terminal neu starten.
+Diesen Block kopieren (**nicht den obigen, sondern den im Terminal angezeigten**) und ebenfalls im Terminal ausführen. 
+
+Achten Sie sich darauf, **nur die unteren drei Zeilen** zu kopieren, nicht die Zeile mit „echo >> ...“ am Anfang.
+
+Danach das Terminal neu starten.
 
 ---
 

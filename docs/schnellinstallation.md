@@ -10,6 +10,8 @@ Diese Seite bündelt die wichtigsten Installationsschritte in je **einem Block f
 
 Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 
+Die Schnellinstallation kann je nach System und Internetverbindung einige Minuten bis zu über einer Stunde dauern.
+
 ---
 
 ## Windows (winget)
