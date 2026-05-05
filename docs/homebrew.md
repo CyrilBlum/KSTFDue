@@ -26,7 +26,7 @@ Das Installationsskript führt durch den gesamten Prozess. Administratorrechte (
 
 ---
 
-## PATH-Konfiguration (Apple Silicon, d.h. M1/M2/M3/M4)
+## `PATH`-Konfiguration (Apple Silicon, d.h. M1/M2/M3/M4/M5)
 
 Auf neueren Macs mit Apple-Silicon-Chip installiert Homebrew standardmässig nach `/opt/homebrew`. Nach der Installation erscheint im Terminal ein Hinweis wie:
 
@@ -38,11 +38,13 @@ Auf neueren Macs mit Apple-Silicon-Chip installiert Homebrew standardmässig nac
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Diesen Block kopieren (**nicht den obigen, sondern den im Terminal angezeigten**) und ebenfalls im Terminal ausführen. 
+Diesen Block kopieren (**nicht den obigen, sondern den im Terminal angezeigten**) und ebenfalls im Terminal ausführen.  Achten Sie sich darauf, **nur die unteren drei Zeilen** zu kopieren (ohne die ersten beiden Zeilen `==> Next steps:` und `- Run these commands...`).
 
-Achten Sie sich darauf, **nur die unteren drei Zeilen** zu kopieren, nicht die Zeile mit „echo >> ...“ am Anfang.
+Danach das Terminal neu starten oder folgenden Befehl ausführen, damit die Änderungen wirksam werden:
 
-Danach das Terminal neu starten.
+```bash
+source ~/.zprofile
+```
 
 ---
 
