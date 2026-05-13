@@ -1,7 +1,7 @@
 <div align="center">
     <h3>KST FDü Software-Installation</h3>
     <br>
-    Installationsanleitungen für Kantonsschule TfDü<br>
+    Installationsanleitungen für Kantonsschule Stadelhofen, Filiale Dübendorf<br>
     <br>
 </div>
 
@@ -27,7 +27,7 @@ Das Repository verwendet Jekyll mit dem Theme «just-the-docs» zur Veröffentli
 ## GitHub-Seite
 
 Die Installationsanleitungen werden auf GitHub Pages veröffentlicht:
-https://cyrilblum.github.io/KSTfDu/
+https://cyrilblum.github.io/install/
 
 ## So verwenden Sie die Anleitung
 

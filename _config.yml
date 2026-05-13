@@ -4,7 +4,7 @@ description: Installationsanleitungen für Schülerinnen der Kantonsschule Stade
 remote_theme: just-the-docs/just-the-docs
 
 url: "https://cyrilblum.github.io"
-baseurl: "/KSTfDu"
+baseurl: "/KSTFDue"
 
 search_enabled: true
 heading_anchors: true
