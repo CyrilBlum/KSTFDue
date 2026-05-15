@@ -40,6 +40,14 @@ Auf neueren Macs mit Apple-Silicon-Chip installiert Homebrew standardmässig nac
 
 Diesen Block kopieren (**nicht den obigen, sondern den im Terminal angezeigten**) und ebenfalls im Terminal ausführen.  Achten Sie sich darauf, **nur die unteren drei Zeilen** zu kopieren (ohne die ersten beiden Zeilen `==> Next steps:` und `- Run these commands...`).
 
+Falls am Schluss folgender Befehl erscheint, müssen Sie nichts tun:
+````
+==> Next steps:
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+```
+
 Danach das Terminal neu starten oder folgenden Befehl ausführen, damit die Änderungen wirksam werden:
 
 ```bash
@@ -50,7 +58,7 @@ source ~/.zprofile
 
 ## Überprüfen der Installation
 
-Nach der Installation prüfen, ob Homebrew korrekt eingerichtet ist:
+Homebrew ist ein reines Terminal-Tool ohne grafische Benutzeroberfläche, daher finden Sie Homebrew nicht unter den installierten Programmen oder im Launchpad. Alle Interaktionen mit Homebrew erfolgen über das Terminal. Um zu überprüfen, ob Homebrew korrekt installiert wurde, führen Sie folgenden Befehl im Terminal aus:
 
 ```bash
 brew --version

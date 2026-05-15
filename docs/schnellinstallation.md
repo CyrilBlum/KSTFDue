@@ -12,6 +12,8 @@ Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) 
 
 Die Schnellinstallation kann je nach System und Internetverbindung einige Minuten bis zu über einer Stunde dauern.
 
+Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
+
 ---
 
 ## Windows (winget)
@@ -101,7 +103,6 @@ casks=(
   mega
   prism
   visual-studio-code
-  filius
   geogebra
   musescore
 )
@@ -149,3 +150,9 @@ echo "========================================"
 echo " Ergebnis: $ok ✅  erfolgreich, $fail ❌  fehlgeschlagen"
 echo "========================================"
 ```
+
+Filius ist unter macOS nicht über Homebrew verfügbar und muss separat installiert werden:
+
+[lernsoftware-filius.de](https://www.lernsoftware-filius.de)
+
+Die macOS-Version herunterladen und installieren.
