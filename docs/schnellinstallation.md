@@ -12,8 +12,6 @@ Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) 
 
 Die Schnellinstallation kann je nach System und Internetverbindung einige Minuten bis zu über einer Stunde dauern.
 
-Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
-
 ---
 
 ## Windows (winget)
@@ -69,7 +67,9 @@ Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die 
 
 ## macOS (Homebrew)
 
-Öffnen Sie Terminal und führen Sie den gesamten Block aus:
+Öffnen Sie Terminal und führen Sie den gesamten Block aus.
+
+Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
 
 ```bash
 echo "========================================"
