@@ -1,13 +1,15 @@
 ---
 layout: default
 title: ⭐ Schnellinstallation
-parent: Installation
+parent: Kurzzeitgymnasium (KG)
 nav_order: 1
 ---
 
-# Schnellinstallation
+# KG Schnellinstallation
 
 Diese Seite bündelt die wichtigsten Installationsschritte in je **einem Block für Windows** und **einem Block für macOS**.
+
+Diese Schnellinstallation ist speziell auf die Bedürfnisse des Kurzzeitgymnasiums (KG) zugeschnitten und enthält alle Programme, die für die meisten Fachschaften relevant sind. Sie bietet eine effiziente Möglichkeit, die benötigte Software mit minimalem Aufwand zu installieren.
 
 Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 

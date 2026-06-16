@@ -17,29 +17,19 @@ Wo immer möglich werden Anleitungen für **Windows** (mit winget) und **macOS**
 - **macOS:** Die Anleitungen setzen voraus, dass [Homebrew](https://brew.sh) installiert ist. Falls nicht, zuerst die Seite [Homebrew einrichten](docs/homebrew.html) befolgen. Befehle müssen in der **Terminal-App** ausgeführt werden. Öffnen Sie ein **Terminal**, indem Sie die Spotlight-Suche mit Cmd + Leertaste öffnen, Terminal eingeben und mit Enter bestätigen.
 ![Terminal unter macOS öffnen](docs/assets/images/Terminal.png)
 
-## Schnellinstallation
+## Kurzzeitgymnasium (KG)
+Schnelle Installation und Verwaltung für das Kurzzeitgymnasium:
 
-Für eine kompakte Grundinstallation aller wichtigsten Tools:
+- [⭐️ Schnellinstallation (Windows & macOS)](docs/kg/schnellinstallation.html)
+- [⭐️ Installationscheck (Windows & macOS)](docs/kg/verifikation.html)
+- [Fachschaften](docs/kg/fachschaften.html) – Programme nach Fachschaft
 
-- [⭐️ Schnellinstallation (Windows & macOS)](docs/schnellinstallation.html)
+## Handelsmittelschule (HMS)
+Schnelle Installation und Verwaltung für die Handelsmittelschule:
 
-Folgen Sie den Links, welche mit einem Sternchen ⭐ markiert sind, um alle Programme mit einem einzigen Block zu installieren, und um die Installation zu überprüfen. Sie können später ggf. einzelne Programme wieder entfernen oder hinzufügen:
+- [⭐️ Schnellinstallation (Windows & macOS)](docs/hms/schnellinstallation.html)
+- [⭐️ Installationscheck (Windows & macOS)](docs/hms/verifikation.html)
 
-- [⭐️ Installationscheck (Windows & macOS)](docs/verifikation.html)
-- [⭐️ Deinstallation (Windows & macOS)](docs/deinstallation.html)
-
-## Fachschaften
-Falls Sie nur Programme für eine bestimmte Fachschaft installieren möchten, finden Sie hier die Anleitungen:
-
-| Fachschaft | Seite |
-|---|---|
-| Alle Fächer | [SafeExamBrowser & Microsoft 365](docs/subjects/allgemein.html) |
-| Bildnerisches Gestalten | [Adobe Creative Cloud, Blender](docs/subjects/bg.html) |
-| Biologie | [ApE, ImageJ, CellProfiler, MEGA, GraphPad Prism](docs/subjects/biologie.html) |
-| Informatik | [VS Code, Python, Git, Anaconda, SQLite, Filius](docs/subjects/informatik.html) |
-| Mathematik | [GeoGebra](docs/subjects/mathematik.html) |
-| Musik | [MuseScore, Ableton, GarageBand, Logic Pro, Dorico Pro](docs/subjects/musik.html) |
-| Webapplikationen | [Moodle, Canva, Classtime, BandLab, Digithek u.v.m.](docs/subjects/webapplikationen.html) |
-| **Installationscheck** | [Alle Programme überprüfen](docs/verifikation.html) |
-| **Deinstallation** | [Tools entfernen (brew / winget)](docs/deinstallation.html) |
-| **macOS: Homebrew einrichten** | [Homebrew (macOS)](docs/homebrew.html) |
+## Weitere Tools
+- [⭐️ Deinstallation (Windows & macOS)](docs/deinstallation.html) – Tools entfernen
+- [macOS: Homebrew einrichten](docs/homebrew.html)

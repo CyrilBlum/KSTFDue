@@ -1,7 +1,7 @@
 ---
 layout: default
-title: ⭐ Deinstallation
-nav_order: 6
+title: Deinstallation
+nav_order: 5
 ---
 
 # Deinstallation (brew / winget)

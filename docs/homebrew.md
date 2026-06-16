@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Homebrew
-nav_order: 2
+title: Homebrew einrichten
+nav_order: 4
 ---
 
 # Homebrew (nur macOS)

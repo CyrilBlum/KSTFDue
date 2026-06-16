@@ -1,13 +1,13 @@
 ---
 layout: default
-title: HMS Schnellinstallation
-parent: Installation
-nav_order: 2
+title: ⭐ Schnellinstallation
+parent: Handelsmittelschule (HMS)
+nav_order: 1
 ---
 
 # HMS Schnellinstallation
 
-Diese Seite bündelt die wichtigsten Installationsschritte in je einem Block für Windows und einem Block für macOS.
+Diese Schnellinstallation ist speziell auf die Bedürfnisse der Handelsmittelschule (HMS) zugeschnitten und enthält alle Programme, die für die meisten Fachschaften relevant sind. Sie bietet eine effiziente Möglichkeit, die benötigte Software mit minimalem Aufwand zu installieren.
 
 Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 
