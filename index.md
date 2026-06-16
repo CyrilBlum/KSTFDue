@@ -33,13 +33,13 @@ Falls Sie nur Programme für eine bestimmte Fachschaft installieren möchten, fi
 
 | Fachschaft | Seite |
 |---|---|
-| Alle Fächer | [SafeExamBrowser & Microsoft 365](docs/allgemein.html) |
-| Bildnerisches Gestalten | [Adobe Creative Cloud, Blender](docs/bg.html) |
-| Biologie | [ApE, ImageJ, CellProfiler, MEGA, GraphPad Prism](docs/biologie.html) |
-| Informatik | [VS Code, Python, Git, Anaconda, SQLite, Filius](docs/informatik.html) |
-| Mathematik | [GeoGebra](docs/mathematik.html) |
-| Musik | [MuseScore, Ableton, GarageBand, Logic Pro, Dorico Pro](docs/musik.html) |
-| Webapplikationen | [Moodle, Canva, Classtime, BandLab, Digithek u.v.m.](docs/webapplikationen.html) |
+| Alle Fächer | [SafeExamBrowser & Microsoft 365](docs/subjects/allgemein.html) |
+| Bildnerisches Gestalten | [Adobe Creative Cloud, Blender](docs/subjects/bg.html) |
+| Biologie | [ApE, ImageJ, CellProfiler, MEGA, GraphPad Prism](docs/subjects/biologie.html) |
+| Informatik | [VS Code, Python, Git, Anaconda, SQLite, Filius](docs/subjects/informatik.html) |
+| Mathematik | [GeoGebra](docs/subjects/mathematik.html) |
+| Musik | [MuseScore, Ableton, GarageBand, Logic Pro, Dorico Pro](docs/subjects/musik.html) |
+| Webapplikationen | [Moodle, Canva, Classtime, BandLab, Digithek u.v.m.](docs/subjects/webapplikationen.html) |
 | **Installationscheck** | [Alle Programme überprüfen](docs/verifikation.html) |
 | **Deinstallation** | [Tools entfernen (brew / winget)](docs/deinstallation.html) |
 | **macOS: Homebrew einrichten** | [Homebrew (macOS)](docs/homebrew.html) |

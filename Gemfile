@@ -1,9 +1,7 @@
 source "https://rubygems.org"
 
-gem "github-pages"
-gem "rake"
-gem "jekyll-remote-theme"
-gem "jekyll-seo-tag"
-gem "csv"
+gem "jekyll", "~> 4.3"
+gem "liquid", ">= 4.0.4"
 gem "webrick"
-gem "bigdecimal"
+gem "jekyll-remote-theme"
+gem "just-the-docs"

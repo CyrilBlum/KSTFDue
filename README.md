@@ -12,15 +12,15 @@ KST FDü Software-Installation ist ein umfassendes Installationsanleitung-Reposi
 ## Repository-Struktur
 
 Installationsanleitungen sind nach Fachbereichen organisiert:
-- `allgemein.md` enthält allgemeine Setupanweisungen (SafeExamBrowser, Microsoft 365).
-- `informatik.md` behandelt Informatik-Tools (VS Code, Python, Git, Anaconda, SQLite, Filius).
-- `biologie.md` enthält Biologie-Software (ApE, ImageJ, CellProfiler, MEGA, GraphPad Prism).
+- `docs/subjects/allgemein.md` enthält allgemeine Setupanweisungen (SafeExamBrowser, Microsoft 365).
+- `docs/subjects/informatik.md` behandelt Informatik-Tools (VS Code, Python, Git, Anaconda, SQLite, Filius).
+- `docs/subjects/biologie.md` enthält Biologie-Software (ApE, ImageJ, CellProfiler, MEGA, GraphPad Prism).
 - `chemie.md` listet Chemie-Tools auf (ChemDraw, Chemix, Römpp).
-- `mathematik.md` enthält Mathematik-Software (GeoGebra).
-- `musik.md` behandelt Musikproduktions-Tools (MuseScore, Ableton, GarageBand, Logic Pro, Dorico Pro).
-- `bg.md` listet Design-Software auf (Adobe Creative Cloud, Blender, Tinkercad).
+- `docs/subjects/mathematik.md` enthält Mathematik-Software (GeoGebra).
+- `docs/subjects/musik.md` behandelt Musikproduktions-Tools (MuseScore, Ableton, GarageBand, Logic Pro, Dorico Pro).
+- `docs/subjects/bg.md` listet Design-Software auf (Adobe Creative Cloud, Blender, Tinkercad).
 - `sport.md` behandelt Sport-Apps (BAM, Coach Now, Polar GoFit, SprintTimer).
-- `webapplikationen.md` dokumentiert Web-basierte Tools (Moodle, Canva, Classtime, BandLab, Digithek).
+- `docs/subjects/webapplikationen.md` dokumentiert Web-basierte Tools (Moodle, Canva, Classtime, BandLab, Digithek).
 
 Das Repository verwendet Jekyll mit dem Theme «just-the-docs» zur Veröffentlichung.
 
@@ -45,7 +45,7 @@ https://cyrilblum.github.io/install/
 ## Beitragen
 
 Um Installationsanleitungen hinzuzufügen oder zu aktualisieren:
-1. Erstellen oder bearbeiten Sie die entsprechende `.md`-Datei im `docs/`-Ordner.
+1. Erstellen oder bearbeiten Sie die entsprechende `.md`-Datei im `docs/subjects/`-Ordner.
 2. Folgen Sie dem bestehenden Format und der Struktur.
 3. Erstellen Sie lokal mit Jekyll eine Vorschau der Änderungen (siehe Jekyll-Dokumentation).
 4. Committen Sie Änderungen und pushen Sie sie ins Repository.

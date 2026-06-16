@@ -1,15 +1,15 @@
 ---
 layout: default
-title: ⭐ Schnellinstallation
+title: HMS Schnellinstallation
 parent: Installation
-nav_order: 1
+nav_order: 2
 ---
 
-# Schnellinstallation
+# HMS Schnellinstallation
 
-Diese Seite bündelt die wichtigsten Installationsschritte in je **einem Block für Windows** und **einem Block für macOS**.
+Diese Seite bündelt die wichtigsten Installationsschritte in je einem Block für Windows und einem Block für macOS.
 
-Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
+Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 
 Die Schnellinstallation kann je nach System und Internetverbindung einige Minuten bis zu über einer Stunde dauern.
 
@@ -17,11 +17,11 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 ## Windows (winget)
 
-Öffnen Sie **PowerShell als Administrator** und führen Sie den gesamten Block aus.
+Öffnen Sie PowerShell als Administrator und führen Sie den gesamten Block aus.
 
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host " Schnellinstallation – Windows"         -ForegroundColor Cyan
+Write-Host " HMS-Schnellinstallation – Windows"     -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
@@ -31,9 +31,6 @@ $apps = @(
   "BlenderFoundation.Blender",
   "iGEM.MEGA.12",
   "GraphPad.Prism",
-  "Microsoft.VisualStudioCode",
-  "Python.Python.3.13",
-  "StefanFreischlad.Filius",
   "GeoGebra.Classic",
   "Musescore.Musescore"
 )
@@ -60,9 +57,9 @@ Write-Host "========================================" -ForegroundColor Cyan
 ```
 
 Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die nicht über winget installiert werden können, müssen manuell installiert werden:
-- **ApE**: Download unter [jorgensen.biology.utah.edu/wayned/ape](https://jorgensen.biology.utah.edu/wayned/ape). Nach dem Download: Das heruntergeladene `zip`-Archiv entpacken, den Ordner in `ApE` umbenennen und diesen, sowie dessen Inhalt, in `C:\Program Files\ApE` verschieben.
-- **CellProfiler**: Download unter [cellprofiler.org](https://cellprofiler.org). Exe-Datei herunterladen, anklicken und das Programm installieren.
-- **ImageJ / Fiji**: Download unter [fiji.sc](https://fiji.sc). Nach dem Download: Die heruntergeladene `zip`-Datei entpacken, den Ordner in `Fiji` umbenennen und diesen, sowie dessen Inhalt, in `C:\Program Files\Fiji` verschieben.
+- ApE: Download unter [jorgensen.biology.utah.edu/wayned/ape](https://jorgensen.biology.utah.edu/wayned/ape). Nach dem Download: Das heruntergeladene zip-Archiv entpacken, den Ordner in ApE umbenennen und diesen, sowie dessen Inhalt, in C:\Program Files\ApE verschieben.
+- CellProfiler: Download unter [cellprofiler.org](https://cellprofiler.org). Exe-Datei herunterladen, anklicken und das Programm installieren.
+- ImageJ / Fiji: Download unter [fiji.sc](https://fiji.sc). Nach dem Download: Die heruntergeladene zip-Datei entpacken, den Ordner in Fiji umbenennen und diesen, sowie dessen Inhalt, in C:\Program Files\Fiji verschieben.
 
 ---
 
@@ -74,7 +71,7 @@ Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizier
 
 ```bash
 echo "========================================"
-echo " Schnellinstallation – macOS"
+echo " HMS-Schnellinstallation – macOS"
 echo "========================================"
 echo ""
 
@@ -85,11 +82,6 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 brew update
-
-# Formulas
-formulas=(
-  python3
-)
 
 # Casks
 casks=(
@@ -103,27 +95,12 @@ casks=(
   cellprofiler
   mega
   prism
-  visual-studio-code
   geogebra
   musescore
 )
 
 ok=0
 fail=0
-
-install_formula () {
-  local pkg="$1"
-  if brew list "$pkg" >/dev/null 2>&1; then
-    echo "✅ $pkg bereits installiert"
-    ok=$((ok + 1))
-  elif brew install "$pkg"; then
-    echo "✅ $pkg installiert"
-    ok=$((ok + 1))
-  else
-    echo "❌ $pkg fehlgeschlagen"
-    fail=$((fail + 1))
-  fi
-}
 
 install_cask () {
   local pkg="$1"
@@ -139,10 +116,6 @@ install_cask () {
   fi
 }
 
-echo "--- Formulas ---"
-for p in "${formulas[@]}"; do install_formula "$p"; done
-
-echo ""
 echo "--- Casks ---"
 for p in "${casks[@]}"; do install_cask "$p"; done
 
@@ -151,9 +124,3 @@ echo "========================================"
 echo " Ergebnis: $ok ✅  erfolgreich, $fail ❌  fehlgeschlagen"
 echo "========================================"
 ```
-
-Filius ist unter macOS nicht über Homebrew verfügbar und muss separat installiert werden:
-
-[lernsoftware-filius.de](https://www.lernsoftware-filius.de)
-
-Die macOS-Version herunterladen und installieren.
