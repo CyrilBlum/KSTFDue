@@ -39,7 +39,14 @@ search_exclude: true
   </div>
 
   <p id="ical-status" role="status">Bereit.</p>
+
+  <div class="output-switch" role="group" aria-label="Ausgabeansicht">
+    <button id="show-code" type="button" class="is-active" aria-pressed="true">HTML-Code</button>
+    <button id="show-preview" type="button" aria-pressed="false">Vorschau</button>
+  </div>
+
   <textarea id="html-output" rows="18" spellcheck="false" readonly></textarea>
+  <iframe id="html-preview" title="HTML-Vorschau" hidden></iframe>
 </div>
 
 <style>
@@ -51,6 +58,7 @@ search_exclude: true
 
   .ical-field,
   .ical-actions,
+  .output-switch,
   .inline-number {
     display: flex;
     gap: .6rem;
@@ -98,13 +106,40 @@ search_exclude: true
     flex-wrap: wrap;
   }
 
-  .ical-actions button {
+  .ical-actions button,
+  .output-switch button {
     border: 1px solid #555;
     border-radius: 4px;
     padding: .45rem .8rem;
     background: #fff;
     color: #222;
     cursor: pointer;
+  }
+
+  .output-switch {
+    gap: 0;
+  }
+
+  .output-switch button {
+    border-color: #bbb;
+  }
+
+  .output-switch button + button {
+    border-left: 0;
+  }
+
+  .output-switch button:first-child {
+    border-radius: 4px 0 0 4px;
+  }
+
+  .output-switch button:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+
+  .output-switch button.is-active {
+    background: #333;
+    border-color: #333;
+    color: #fff;
   }
 
   .ical-actions button:disabled {
@@ -128,6 +163,14 @@ search_exclude: true
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: .85rem;
   }
+
+  #html-preview {
+    width: 100%;
+    min-height: 32rem;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+  }
 </style>
 
 <script>
@@ -145,6 +188,9 @@ search_exclude: true
   const urlInput = document.querySelector("#ical-url");
   const copyButton = document.querySelector("#copy-html");
   const generateButton = document.querySelector("#generate-html");
+  const previewEl = document.querySelector("#html-preview");
+  const showCodeButton = document.querySelector("#show-code");
+  const showPreviewButton = document.querySelector("#show-preview");
   const limitInput = document.querySelector("#event-limit");
   const modeInputs = document.querySelectorAll("input[name='event-mode']");
 
@@ -171,11 +217,22 @@ search_exclude: true
     return url;
   }
 
+  function setOutputView(view) {
+    const showPreview = view === "preview";
+    outputEl.hidden = showPreview;
+    previewEl.hidden = !showPreview;
+    showCodeButton.classList.toggle("is-active", !showPreview);
+    showPreviewButton.classList.toggle("is-active", showPreview);
+    showCodeButton.setAttribute("aria-pressed", String(!showPreview));
+    showPreviewButton.setAttribute("aria-pressed", String(showPreview));
+  }
+
   async function generateHtml() {
     try {
       generateButton.disabled = true;
       copyButton.disabled = true;
       outputEl.value = "";
+      previewEl.removeAttribute("srcdoc");
       setStatus("URL wird an Python übergeben...");
 
       const url = getIcalUrl();
@@ -199,6 +256,7 @@ search_exclude: true
       }
 
       outputEl.value = data.html;
+      previewEl.srcdoc = data.html;
       copyButton.disabled = false;
       setStatus("HTML generiert.");
     } catch (error) {
@@ -219,6 +277,8 @@ search_exclude: true
     });
   });
 
+  showCodeButton.addEventListener("click", () => setOutputView("code"));
+  showPreviewButton.addEventListener("click", () => setOutputView("preview"));
   generateButton.addEventListener("click", generateHtml);
   copyButton.addEventListener("click", copyHtml);
 </script>
