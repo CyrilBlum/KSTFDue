@@ -135,6 +135,9 @@ search_exclude: true
     if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
       return "http://127.0.0.1:8765/convert";
     }
+    if (location.hostname.endsWith(".github.io")) {
+      return "https://dashboard.in-form-atik.ch/kstfdue-ical/convert";
+    }
     return new URL("{{ site.baseurl }}/ical-to-html/convert", location.origin).href;
   })();
   const statusEl = document.querySelector("#ical-status");

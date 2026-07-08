@@ -6,7 +6,8 @@ import html
 import json
 from collections import defaultdict
 from datetime import date, datetime, time
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import urlparse
 from urllib.request import urlopen
 
 try:
@@ -36,6 +37,12 @@ DAYS_DE = {
 
 def looks_like_url(value):
     return value.strip().lower().startswith(("http://", "https://"))
+
+
+def validate_url(url):
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        raise ValueError("Bitte eine gültige iCal-URL mit http:// oder https:// eingeben.")
 
 
 def normalize_dt(value):
@@ -255,7 +262,8 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
 
 
 def fetch_ical(url):
-    with urlopen(url) as response:
+    validate_url(url)
+    with urlopen(url, timeout=20) as response:
         return response.read()
 
 
@@ -319,7 +327,7 @@ class CalendarRequestHandler(BaseHTTPRequestHandler):
 
 
 def serve(host="127.0.0.1", port=8765):
-    server = HTTPServer((host, port), CalendarRequestHandler)
+    server = ThreadingHTTPServer((host, port), CalendarRequestHandler)
     print(f"iCal-zu-HTML-Helper läuft auf http://{host}:{port}")
     print("Mit Ctrl+C beenden.")
     try:
