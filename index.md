@@ -33,4 +33,3 @@ Schnelle Installation und Verwaltung für die Handelsmittelschule:
 ## Weitere Tools
 - [⭐️ Deinstallation (Windows & macOS)](docs/deinstallation.html) – Tools entfernen
 - [macOS: Homebrew einrichten](docs/homebrew.html)
-- [iCal zu HTML](docs/ical-to-html.html)
