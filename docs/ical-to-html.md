@@ -10,7 +10,7 @@ search_exclude: true
 <div class="ical-tool">
   <div class="ical-field">
     <label for="ical-url">iCal-URL</label>
-    <input id="ical-url" type="url" value="https://intranet.tam.ch/klw/rest/ics/type/calendar/date/1783439452/auth/gr001@Y3lyaWwuYmx1bQ==:Y2JhMDMyNTkyNmI1NmFiNjAxZTBhN2JmNzA4N2M1ZDNmOWQyMTUwMw==/calendar.ics">
+    <input id="ical-url" type="text" inputmode="url" value="https://intranet.tam.ch/klw/rest/ics/type/calendar/date/1783439452/auth/gr001@Y3lyaWwuYmx1bQ==:Y2JhMDMyNTkyNmI1NmFiNjAxZTBhN2JmNzA4N2M1ZDNmOWQyMTUwMw==/calendar.ics">
   </div>
 
   <p class="ical-hint">
@@ -66,12 +66,12 @@ search_exclude: true
     font-weight: 600;
   }
 
-  .ical-field input[type="url"] {
+  #ical-url {
     flex: 1 1 24rem;
     min-width: 16rem;
   }
 
-  .ical-tool input[type="url"],
+  #ical-url,
   .ical-tool input[type="number"],
   .ical-tool textarea {
     border: 1px solid #bbb;
@@ -131,8 +131,12 @@ search_exclude: true
 </style>
 
 <script>
-  const pyodideBaseUrl = "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/";
-  const scriptUrl = "{{ site.baseurl }}/ical-to-html/ical-to-html.py?v=20260708-encoded-ical-url";
+  const helperEndpoint = (() => {
+    if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+      return "http://127.0.0.1:8765/convert";
+    }
+    return new URL("{{ site.baseurl }}/ical-to-html/convert", location.origin).href;
+  })();
   const statusEl = document.querySelector("#ical-status");
   const outputEl = document.querySelector("#html-output");
   const urlInput = document.querySelector("#ical-url");
@@ -161,80 +165,10 @@ search_exclude: true
     if (!/^https?:\/\//i.test(url)) {
       throw new Error("Bitte eine gültige iCal-URL mit http:// oder https:// eingeben.");
     }
-
-    const parsedUrl = new URL(url);
-    if (parsedUrl.username || parsedUrl.password) {
-      throw new Error("Bitte eine iCal-URL ohne Zugangsdaten vor dem Host eingeben.");
-    }
-
-    parsedUrl.pathname = parsedUrl.pathname
-      .split("/")
-      .map((segment) => encodeURIComponent(decodeURIComponent(segment)))
-      .join("/");
-    return parsedUrl.toString();
-  }
-
-  function createPythonWorker() {
-    const workerSource = `
-      let pyodideReady = null;
-
-      async function loadConverter(pyodideBaseUrl, scriptUrl) {
-        if (!pyodideReady) {
-          self.postMessage({ type: "status", message: "Python wird geladen..." });
-          importScripts(pyodideBaseUrl + "pyodide.js");
-          const pyodide = await loadPyodide({ indexURL: pyodideBaseUrl });
-          self.postMessage({ type: "status", message: "Python-Skript wird geladen..." });
-          const sourceResponse = await fetch(scriptUrl, { cache: "no-store" });
-          if (!sourceResponse.ok) {
-            throw new Error("Python-Skript konnte nicht geladen werden.");
-          }
-          pyodide.globals.set("__name__", "ical_to_html_browser");
-          pyodide.runPython(await sourceResponse.text());
-          pyodideReady = pyodide;
-        }
-        return pyodideReady;
-      }
-
-      self.onmessage = async (event) => {
-        const { pyodideBaseUrl, scriptUrl, url, limit } = event.data;
-        try {
-          const pyodide = await loadConverter(pyodideBaseUrl, scriptUrl);
-          self.postMessage({ type: "status", message: "Python lädt die iCal-URL..." });
-          pyodide.globals.set("browser_ical_url", url);
-          pyodide.globals.set("browser_limit", limit);
-          const html = await pyodide.runPythonAsync(
-            "await generate_calendar_html_from_source(browser_ical_url, source_kind='url', limit=browser_limit, subscribe_url=browser_ical_url)"
-          );
-          self.postMessage({ type: "result", html });
-        } catch (error) {
-          self.postMessage({ type: "error", message: error.message || "Python ist fehlgeschlagen." });
-        }
-      };
-    `;
-    const workerUrl = URL.createObjectURL(new Blob([workerSource], { type: "application/javascript" }));
-    return {
-      worker: new Worker(workerUrl),
-      workerUrl,
-    };
+    return url;
   }
 
   async function generateHtml() {
-    let worker = null;
-    let workerUrl = null;
-    let fetchTimeoutId = null;
-    let overallTimeoutId = null;
-
-    function cleanup() {
-      window.clearTimeout(fetchTimeoutId);
-      window.clearTimeout(overallTimeoutId);
-      if (worker) {
-        worker.terminate();
-      }
-      if (workerUrl) {
-        URL.revokeObjectURL(workerUrl);
-      }
-    }
-
     try {
       generateButton.disabled = true;
       copyButton.disabled = true;
@@ -243,52 +177,27 @@ search_exclude: true
 
       const url = getIcalUrl();
       const limit = selectedLimit();
-      const workerHandle = createPythonWorker();
-      worker = workerHandle.worker;
-      workerUrl = workerHandle.workerUrl;
+      let response;
+      try {
+        response = await fetch(helperEndpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ url, limit }),
+        });
+      } catch (error) {
+        throw new Error(`Python-Webserver nicht erreichbar: ${helperEndpoint}`);
+      }
 
-      await new Promise((resolve, reject) => {
-        overallTimeoutId = window.setTimeout(() => {
-          cleanup();
-          reject(new Error("Python braucht zu lange zum Starten. Bitte die Seite neu laden und nochmals versuchen."));
-        }, 60000);
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Python konnte das HTML nicht generieren.");
+      }
 
-        worker.onmessage = (event) => {
-          const data = event.data;
-
-          if (data.type === "status") {
-            setStatus(data.message);
-            if (data.message === "Python lädt die iCal-URL...") {
-              fetchTimeoutId = window.setTimeout(() => {
-                cleanup();
-                reject(new Error("Python wartet zu lange auf die iCal-URL. Die Intranet-Seite blockiert den Zugriff wahrscheinlich oder antwortet nicht rechtzeitig."));
-              }, 15000);
-            }
-            return;
-          }
-
-          if (data.type === "result") {
-            outputEl.value = data.html;
-            copyButton.disabled = false;
-            setStatus("HTML generiert.");
-            cleanup();
-            resolve();
-            return;
-          }
-
-          if (data.type === "error") {
-            cleanup();
-            reject(new Error(data.message));
-          }
-        };
-
-        worker.onerror = (event) => {
-          cleanup();
-          reject(new Error(event.message || "Python-Worker ist fehlgeschlagen."));
-        };
-
-        worker.postMessage({ pyodideBaseUrl, scriptUrl, url, limit });
-      });
+      outputEl.value = data.html;
+      copyButton.disabled = false;
+      setStatus("HTML generiert.");
     } catch (error) {
       setStatus(error.message);
     } finally {

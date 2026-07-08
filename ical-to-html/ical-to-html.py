@@ -3,8 +3,10 @@
 
 import argparse
 import html
+import json
 from collections import defaultdict
 from datetime import date, datetime, time
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.request import urlopen
 
 try:
@@ -14,6 +16,11 @@ except ImportError:
 
 
 ICAL_URL = "https://intranet.tam.ch/klw/rest/ics/type/calendar/date/1783439452/auth/gr001@Y3lyaWwuYmx1bQ==:Y2JhMDMyNTkyNmI1NmFiNjAxZTBhN2JmNzA4N2M1ZDNmOWQyMTUwMw==/calendar.ics"
+CONVERT_PATHS = {
+    "/convert",
+    "/ical-to-html/convert",
+    "/KSTFDue/ical-to-html/convert",
+}
 
 MONTHS_DE = {
     "January": "Januar", "February": "Februar", "March": "März", "April": "April",
@@ -252,39 +259,83 @@ def fetch_ical(url):
         return response.read()
 
 
-async def fetch_ical_browser(url):
+def generate_calendar_html_from_url(url, limit=None, title="Kalender"):
+    ical_content = fetch_ical(url)
+    return generate_calendar_html(
+        ical_content,
+        limit=limit,
+        title=title,
+        subscribe_url=url,
+    )
+
+
+class CalendarRequestHandler(BaseHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type")
+        super().end_headers()
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.end_headers()
+
+    def do_GET(self):
+        if self.path not in {"/", "/health"}:
+            self.send_error(404)
+            return
+
+        self.send_response(200)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(json.dumps({"ok": True}).encode("utf-8"))
+
+    def do_POST(self):
+        if self.path not in CONVERT_PATHS:
+            self.send_error(404)
+            return
+
+        try:
+            content_length = int(self.headers.get("Content-Length", "0"))
+            payload = json.loads(self.rfile.read(content_length).decode("utf-8"))
+            url = payload["url"]
+            limit = payload.get("limit")
+            if limit is not None:
+                limit = int(limit)
+            generated_html = generate_calendar_html_from_url(url, limit=limit)
+            response = {"html": generated_html}
+            status = 200
+        except Exception as exc:
+            response = {"error": str(exc)}
+            status = 500
+
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(json.dumps(response).encode("utf-8"))
+
+    def log_message(self, format, *args):
+        print(f"{self.address_string()} - {format % args}")
+
+
+def serve(host="127.0.0.1", port=8765):
+    server = HTTPServer((host, port), CalendarRequestHandler)
+    print(f"iCal-zu-HTML-Helper läuft auf http://{host}:{port}")
+    print("Mit Ctrl+C beenden.")
     try:
-        from js import fetch, AbortController, setTimeout, clearTimeout
-    except ImportError as exc:
-        raise RuntimeError("Browser-Python kann die Fetch-API nicht laden.") from exc
-
-    controller = AbortController.new()
-
-    def abort_request():
-        controller.abort()
-
-    try:
-        timeout_id = setTimeout(abort_request, 12000)
-        response = await fetch(url, {"signal": controller.signal})
-        clearTimeout(timeout_id)
-    except Exception as exc:
-        raise RuntimeError(
-            "Die iCal-URL konnte im Browser nicht geladen werden. "
-            "Die Intranet-Seite blockiert den Zugriff wahrscheinlich oder antwortet nicht rechtzeitig."
-        ) from exc
-
-    if not response.ok:
-        raise RuntimeError(f"Die iCal-URL konnte nicht geladen werden ({response.status}).")
-
-    return await response.text()
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nHelper beendet.")
+    finally:
+        server.server_close()
 
 
-async def generate_calendar_html_from_source(source, source_kind="auto", limit=None, title="Kalender", subscribe_url=ICAL_URL, now=None):
+def generate_calendar_html_from_source(source, source_kind="auto", limit=None, title="Kalender", subscribe_url=ICAL_URL, now=None):
     if source_kind == "auto":
         source_kind = "url" if looks_like_url(source) else "content"
 
     if source_kind == "url":
-        ical_content = await fetch_ical_browser(source)
+        ical_content = fetch_ical(source)
         subscribe_url = source
     else:
         ical_content = source
@@ -303,7 +354,14 @@ def main():
     parser.add_argument("--url", default=ICAL_URL, help="URL der iCal-Datei")
     parser.add_argument("--output", default="kalender.html", help="Pfad der HTML-Ausgabedatei")
     parser.add_argument("--limit", type=int, help="Nur die nächsten N Termine ausgeben")
+    parser.add_argument("--serve", action="store_true", help="Lokalen Helper-Server für die Jekyll-Seite starten")
+    parser.add_argument("--host", default="127.0.0.1", help="Host für --serve")
+    parser.add_argument("--port", type=int, default=8765, help="Port für --serve")
     args = parser.parse_args()
+
+    if args.serve:
+        serve(args.host, args.port)
+        return
 
     ical_content = fetch_ical(args.url)
     generated_html = generate_calendar_html(ical_content, limit=args.limit, subscribe_url=args.url)
