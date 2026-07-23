@@ -113,6 +113,7 @@ def parse_events_basic(ical_content):
                 events.append({
                     "summary": current_event.get("SUMMARY", "Ohne Titel"),
                     "start": parse_ical_datetime(current_event.get("DTSTART", "")),
+                    "end": parse_ical_datetime(current_event.get("DTEND", "")),
                     "description": current_event.get("DESCRIPTION", ""),
                 })
             current_event = None
@@ -124,7 +125,7 @@ def parse_events_basic(ical_content):
         key = key.split(";", 1)[0].upper()
         if key in {"SUMMARY", "DESCRIPTION"}:
             current_event[key] = unescape_ical_text(value)
-        elif key == "DTSTART":
+        elif key in {"DTSTART", "DTEND"}:
             current_event[key] = value
 
     events.sort(key=lambda event: normalize_dt(event["start"]))
@@ -143,10 +144,13 @@ def parse_events(ical_content):
             continue
 
         start = component.get("dtstart")
+        end = component.get("dtend")
         start_dt = start.dt if start else None
+        end_dt = end.dt if end else None
         events.append({
             "summary": str(component.get("summary", "Ohne Titel")),
             "start": start_dt,
+            "end": end_dt,
             "description": str(component.get("description", "")),
         })
 
@@ -178,22 +182,27 @@ def event_month(event):
 def event_display_values(event):
     start = event["start"]
     if not start:
-        return "Kein Datum", ""
+        return "Kein Datum", "", ""
 
     date_str = start.strftime("%d.%m.%Y")
     day_de = DAYS_DE.get(start.strftime("%A"), start.strftime("%A"))
 
     if isinstance(start, datetime):
-        return date_str, f"{day_de}, {start.strftime('%H:%M')}"
+        time_display = start.strftime("%H:%M")
+        end = event.get("end")
+        if isinstance(end, datetime):
+            time_display += f"–{end.strftime('%H:%M')}"
+        return date_str, day_de, time_display
 
-    return date_str, day_de
+    return date_str, day_de, ""
 
 
 def event_description(event):
-    description = event["summary"]
-    if event["description"]:
-        description += f" - {event['description']}"
-    return description
+    summary = html.unescape(event["summary"]).replace("\xa0", " ").strip()
+    description = html.unescape(event["description"]).replace("\xa0", " ").strip()
+    if description:
+        return f"{summary} - {description}"
+    return summary
 
 
 def select_events(events, limit=None, now=None):
@@ -228,9 +237,14 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         "    h2 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; border-bottom: 1px solid #bbb; padding-bottom: .25rem; }",
         "    table { width: 100%; border-collapse: collapse; }",
         "    td { padding: .5rem .25rem; border-bottom: 1px solid #e5e5e5; vertical-align: top; }",
-        "    td:first-child { width: 7rem; font-weight: 700; }",
-        "    td:nth-child(2) { width: 10rem; color: #555; }",
+        "    .event-when { width: 10rem; padding-right: 1.25rem; }",
+        "    .event-date { display: block; font-weight: 700; }",
+        "    .event-weekday, .event-time { display: block; color: #555; font-size: .9rem; }",
+        "    .event-time { margin-top: .1rem; font-weight: 600; }",
         "    .subscribe { margin-bottom: 1.5rem; }",
+        "    @media (max-width: 36rem) {",
+        "      .event-when { width: 8rem; padding-right: .75rem; }",
+        "    }",
         "  </style>",
         "</head>",
         "<body>",
@@ -243,11 +257,19 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         lines.append("<table>")
 
         for event in month_events:
-            date_str, time_display = event_display_values(event)
+            date_str, day_display, time_display = event_display_values(event)
+            time_html = (
+                f'<span class="event-time">{html.escape(time_display)}</span>'
+                if time_display
+                else ""
+            )
             lines.append(
                 "<tr>"
-                f"<td>{html.escape(date_str)}</td>"
-                f"<td>{html.escape(time_display)}</td>"
+                '<td class="event-when">'
+                f'<span class="event-date">{html.escape(date_str)}</span>'
+                f'<span class="event-weekday">{html.escape(day_display)}</span>'
+                f"{time_html}"
+                "</td>"
                 f"<td>{html.escape(event_description(event))}</td>"
                 "</tr>"
             )

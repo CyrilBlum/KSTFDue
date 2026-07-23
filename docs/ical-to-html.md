@@ -20,16 +20,16 @@ search_exclude: true
   <fieldset>
     <legend>Ausgabe</legend>
     <label>
-      <input type="radio" name="event-mode" value="next" checked>
+      <input type="radio" name="event-mode" value="next">
       Nächste Termine
     </label>
     <label>
-      <input type="radio" name="event-mode" value="all">
+      <input type="radio" name="event-mode" value="all" checked>
       Alle Termine
     </label>
     <label class="inline-number">
       Anzahl
-      <input id="event-limit" type="number" min="1" step="1" value="3">
+      <input id="event-limit" type="number" min="1" step="1" value="3" disabled>
     </label>
   </fieldset>
 
