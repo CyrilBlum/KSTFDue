@@ -10,7 +10,7 @@ search_exclude: true
 <div class="ical-tool">
   <div class="ical-field">
     <label for="ical-url">iCal-URL</label>
-    <input id="ical-url" type="text" inputmode="url" value="https://intranet.tam.ch/fdu/rest/ics/type/calendar/date/1784029542/auth/gr001@Y3lyaWwuYmx1bQ==:NWE3ZmVjNzMwYTg5YmJhNDBhMjVmMmNlZjkxZDlkM2E2N2MxMGMzMw==/calendar.ics">
+    <input id="ical-url" type="text" inputmode="url" value="https://intranet.tam.ch/fdu/rest/ics/type/calendar/date/1784817314/auth/gr001@YW5kcmluLnNjaHVldHouZmR1:Mjk5MTdmYmE3MTEyMTU4MzRkZmIxZTE0MzIyZTllNWY1ZjRhZDNjYg==/calendar.ics">
   </div>
 
   <p class="ical-hint">
