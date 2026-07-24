@@ -258,18 +258,18 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
     for month_key, month_events in grouped_events.items():
         lines.append(f"<h2>{html.escape(month_headers[month_key])}</h2>")
         lines.extend([
-            "<table>",
+            '<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">',
             "<colgroup>"
-            '<col class="col-weekday">'
-            '<col class="col-date">'
-            '<col class="col-time">'
-            '<col class="col-content">'
+            '<col class="col-weekday" width="14%" style="width: 14%;">'
+            '<col class="col-date" width="16%" style="width: 16%;">'
+            '<col class="col-time" width="16%" style="width: 16%;">'
+            '<col class="col-content" width="54%" style="width: 54%;">'
             "</colgroup>",
             "<thead><tr>"
-            "<th>Wochentag</th>"
-            "<th>Datum</th>"
-            "<th>Zeit</th>"
-            "<th>Inhalt / Text</th>"
+            '<th width="14%" style="width: 14%;">Wochentag</th>'
+            '<th width="16%" style="width: 16%;">Datum</th>'
+            '<th width="16%" style="width: 16%;">Zeit</th>'
+            '<th width="54%" style="width: 54%;">Inhalt / Text</th>'
             "</tr></thead>",
             "<tbody>",
         ])
@@ -278,10 +278,10 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
             date_str, day_display, time_display = event_display_values(event)
             lines.append(
                 "<tr>"
-                f'<td class="event-weekday">{html.escape(day_display)}</td>'
-                f'<td class="event-date">{html.escape(date_str)}</td>'
-                f'<td class="event-time">{html.escape(time_display)}</td>'
-                f'<td class="event-content">{html.escape(event_description(event))}</td>'
+                f'<td class="event-weekday" width="14%" style="width: 14%;">{html.escape(day_display)}</td>'
+                f'<td class="event-date" width="16%" style="width: 16%;">{html.escape(date_str)}</td>'
+                f'<td class="event-time" width="16%" style="width: 16%;">{html.escape(time_display)}</td>'
+                f'<td class="event-content" width="54%" style="width: 54%;">{html.escape(event_description(event))}</td>'
                 "</tr>"
             )
 

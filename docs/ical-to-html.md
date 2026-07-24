@@ -284,7 +284,6 @@ search_exclude: true
       outputEl.value = data.html;
       previewEl.srcdoc = data.html;
       copyCodeButton.disabled = false;
-      copyPreviewButton.disabled = false;
       setStatus("HTML generiert.");
     } catch (error) {
       setStatus(error.message);
@@ -299,11 +298,32 @@ search_exclude: true
   }
 
   async function copyPreview() {
-    const previewDocument = new DOMParser().parseFromString(outputEl.value, "text/html");
-    const previewStyles = Array.from(previewDocument.head.querySelectorAll("style"))
-      .map((style) => style.outerHTML)
-      .join("");
-    const htmlContent = previewStyles + previewDocument.body.innerHTML;
+    const previewDocument = previewEl.contentDocument;
+    const sourceElements = [previewDocument.body, ...previewDocument.body.querySelectorAll("*")];
+    const portableBody = previewDocument.body.cloneNode(true);
+    const portableElements = [portableBody, ...portableBody.querySelectorAll("*")];
+    const portableProperties = [
+      "font-family", "font-size", "font-style", "font-weight", "color", "line-height",
+      "text-align", "vertical-align", "white-space", "overflow-wrap",
+      "margin-top", "margin-right", "margin-bottom", "margin-left",
+      "padding-top", "padding-right", "padding-bottom", "padding-left",
+      "border-top", "border-right", "border-bottom", "border-left",
+      "border-collapse", "table-layout",
+    ];
+
+    sourceElements.forEach((source, index) => {
+      const computed = previewEl.contentWindow.getComputedStyle(source);
+      const target = portableElements[index];
+      portableProperties.forEach((property) => {
+        target.style.setProperty(property, computed.getPropertyValue(property));
+      });
+    });
+
+    portableBody.querySelectorAll("style").forEach((style) => style.remove());
+    const wrapper = previewDocument.createElement("div");
+    wrapper.setAttribute("style", portableBody.getAttribute("style") || "");
+    wrapper.innerHTML = portableBody.innerHTML;
+    const htmlContent = wrapper.outerHTML;
     const textContent = previewDocument.body.textContent.trim();
 
     if (typeof ClipboardItem === "undefined") {
@@ -330,4 +350,7 @@ search_exclude: true
   generateButton.addEventListener("click", generateHtml);
   copyCodeButton.addEventListener("click", copyCode);
   copyPreviewButton.addEventListener("click", copyPreview);
+  previewEl.addEventListener("load", () => {
+    copyPreviewButton.disabled = !outputEl.value;
+  });
 </script>
