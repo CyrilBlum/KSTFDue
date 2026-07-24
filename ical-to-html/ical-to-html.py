@@ -5,7 +5,7 @@ import argparse
 import html
 import json
 from collections import defaultdict
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 from urllib.request import urlopen
@@ -184,12 +184,24 @@ def event_display_values(event):
     if not start:
         return "Kein Datum", "", ""
 
-    date_str = start.strftime("%d.%m.%Y")
+    start_date = start.date() if isinstance(start, datetime) else start
+    end = event.get("end")
+    end_date = None
+    if isinstance(end, datetime):
+        end_date = end.date()
+    elif isinstance(end, date):
+        end_date = end
+        if not isinstance(start, datetime):
+            end_date -= timedelta(days=1)
+
+    date_str = start_date.strftime("%d.%m.%Y")
+    if end_date is not None and end_date > start_date:
+        date_str += f" - {end_date.strftime('%d.%m.%Y')}"
+
     day_de = DAYS_DE.get(start.strftime("%A"), start.strftime("%A"))
 
     if isinstance(start, datetime):
         time_display = start.strftime("%H:%M")
-        end = event.get("end")
         if isinstance(end, datetime):
             end_time = end.strftime("%H:%M")
             if end_time != time_display:
