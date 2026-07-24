@@ -40,17 +40,17 @@ search_exclude: true
   <p id="ical-status" role="status">Bereit.</p>
 
   <div class="output-switch" role="group" aria-label="Ausgabeansicht">
-    <button id="show-code" type="button" class="is-active" aria-pressed="true">HTML-Code</button>
-    <button id="show-preview" type="button" aria-pressed="false">Vorschau</button>
+    <button id="show-preview" type="button" class="is-active" aria-pressed="true">Vorschau</button>
+    <button id="show-code" type="button" aria-pressed="false">HTML-Code</button>
   </div>
 
-  <div id="code-panel" class="output-panel">
-    <button id="copy-code" class="copy-output" type="button" disabled>Code kopieren</button>
-    <textarea id="html-output" rows="18" spellcheck="false" readonly></textarea>
-  </div>
-  <div id="preview-panel" class="output-panel" hidden>
+  <div id="preview-panel" class="output-panel">
     <button id="copy-preview" class="copy-output" type="button" disabled>Vorschau kopieren</button>
     <iframe id="html-preview" title="HTML-Vorschau"></iframe>
+  </div>
+  <div id="code-panel" class="output-panel" hidden>
+    <button id="copy-code" class="copy-output" type="button" disabled>Code kopieren</button>
+    <textarea id="html-output" rows="18" spellcheck="false" readonly></textarea>
   </div>
 </div>
 
