@@ -191,7 +191,9 @@ def event_display_values(event):
         time_display = start.strftime("%H:%M")
         end = event.get("end")
         if isinstance(end, datetime):
-            time_display += f"–{end.strftime('%H:%M')}"
+            end_time = end.strftime("%H:%M")
+            if end_time != time_display:
+                time_display += f"–{end_time}"
         return date_str, day_de, time_display
 
     return date_str, day_de, ""
