@@ -245,6 +245,7 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         "    td { border-bottom: 1px solid #e5e5e5; }",
         "    .event-date { font-weight: 700; }",
         "    .event-time { color: #555; font-weight: 600; }",
+        "    .event-tag { display: inline-block; margin-right: .4rem; padding: .05rem .4rem; border-radius: .25rem; font-size: .75rem; font-weight: 700; vertical-align: .1rem; }",
         "    @media (max-width: 36rem) {",
         "      body { margin: 1rem; }",
         "      th, td { padding-right: .5rem; }",
@@ -275,12 +276,31 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
 
         for event in month_events:
             date_str, day_display, time_display = event_display_values(event)
+            description = event_description(event)
+            description_folded = description.casefold()
+            if "ferien" in description_folded:
+                tag_html = (
+                    '<span class="event-tag" '
+                    'style="display: inline-block; margin-right: .4rem; padding: .05rem .4rem; '
+                    'border-radius: .25rem; background-color: #B3C458; color: #222; '
+                    'font-size: .75rem; font-weight: 700;">Ferien</span>'
+                )
+            elif "blockwoche" in description_folded:
+                tag_html = (
+                    '<span class="event-tag" '
+                    'style="display: inline-block; margin-right: .4rem; padding: .05rem .4rem; '
+                    'border-radius: .25rem; background-color: #217C6F; color: #fff; '
+                    'font-size: .75rem; font-weight: 700;">Blockwoche</span>'
+                )
+            else:
+                tag_html = ""
+
             lines.append(
                 "<tr>"
                 f'<td class="event-weekday" width="14%" style="width: 14%;">{html.escape(day_display)}</td>'
                 f'<td class="event-date" width="16%" style="width: 16%;">{html.escape(date_str)}</td>'
                 f'<td class="event-time" width="16%" style="width: 16%;">{html.escape(time_display)}</td>'
-                f'<td class="event-content" width="54%" style="width: 54%;">{html.escape(event_description(event))}</td>'
+                f'<td class="event-content" width="54%" style="width: 54%;">{tag_html}{html.escape(description)}</td>'
                 "</tr>"
             )
 
