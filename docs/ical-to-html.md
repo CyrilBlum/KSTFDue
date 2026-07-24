@@ -35,7 +35,6 @@ search_exclude: true
 
   <div class="ical-actions">
     <button id="generate-html" type="button">HTML generieren</button>
-    <button id="copy-html" type="button" disabled>HTML kopieren</button>
   </div>
 
   <p id="ical-status" role="status">Bereit.</p>
@@ -45,8 +44,14 @@ search_exclude: true
     <button id="show-preview" type="button" aria-pressed="false">Vorschau</button>
   </div>
 
-  <textarea id="html-output" rows="18" spellcheck="false" readonly></textarea>
-  <iframe id="html-preview" title="HTML-Vorschau" hidden></iframe>
+  <div id="code-panel" class="output-panel">
+    <button id="copy-code" class="copy-output" type="button" disabled>Code kopieren</button>
+    <textarea id="html-output" rows="18" spellcheck="false" readonly></textarea>
+  </div>
+  <div id="preview-panel" class="output-panel" hidden>
+    <button id="copy-preview" class="copy-output" type="button" disabled>Vorschau kopieren</button>
+    <iframe id="html-preview" title="HTML-Vorschau"></iframe>
+  </div>
 </div>
 
 <style>
@@ -107,7 +112,8 @@ search_exclude: true
   }
 
   .ical-actions button,
-  .output-switch button {
+  .output-switch button,
+  .copy-output {
     border: 1px solid #555;
     border-radius: 4px;
     padding: .45rem .8rem;
@@ -142,7 +148,8 @@ search_exclude: true
     color: #fff;
   }
 
-  .ical-actions button:disabled {
+  .ical-actions button:disabled,
+  .copy-output:disabled {
     border-color: #bbb;
     color: #777;
     cursor: not-allowed;
@@ -157,9 +164,24 @@ search_exclude: true
     color: #555;
   }
 
+  .output-panel {
+    position: relative;
+  }
+
+  .copy-output {
+    position: absolute;
+    z-index: 1;
+    top: .65rem;
+    right: .65rem;
+    background: rgba(255, 255, 255, .95);
+  }
+
   #html-output {
+    box-sizing: border-box;
+    display: block;
     width: 100%;
     min-height: 24rem;
+    padding-top: 3.5rem;
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: .85rem;
   }
@@ -186,9 +208,12 @@ search_exclude: true
   const statusEl = document.querySelector("#ical-status");
   const outputEl = document.querySelector("#html-output");
   const urlInput = document.querySelector("#ical-url");
-  const copyButton = document.querySelector("#copy-html");
+  const copyCodeButton = document.querySelector("#copy-code");
+  const copyPreviewButton = document.querySelector("#copy-preview");
   const generateButton = document.querySelector("#generate-html");
   const previewEl = document.querySelector("#html-preview");
+  const codePanel = document.querySelector("#code-panel");
+  const previewPanel = document.querySelector("#preview-panel");
   const showCodeButton = document.querySelector("#show-code");
   const showPreviewButton = document.querySelector("#show-preview");
   const limitInput = document.querySelector("#event-limit");
@@ -219,8 +244,8 @@ search_exclude: true
 
   function setOutputView(view) {
     const showPreview = view === "preview";
-    outputEl.hidden = showPreview;
-    previewEl.hidden = !showPreview;
+    codePanel.hidden = showPreview;
+    previewPanel.hidden = !showPreview;
     showCodeButton.classList.toggle("is-active", !showPreview);
     showPreviewButton.classList.toggle("is-active", showPreview);
     showCodeButton.setAttribute("aria-pressed", String(!showPreview));
@@ -230,7 +255,8 @@ search_exclude: true
   async function generateHtml() {
     try {
       generateButton.disabled = true;
-      copyButton.disabled = true;
+      copyCodeButton.disabled = true;
+      copyPreviewButton.disabled = true;
       outputEl.value = "";
       previewEl.removeAttribute("srcdoc");
       setStatus("URL wird an Python übergeben...");
@@ -257,7 +283,8 @@ search_exclude: true
 
       outputEl.value = data.html;
       previewEl.srcdoc = data.html;
-      copyButton.disabled = false;
+      copyCodeButton.disabled = false;
+      copyPreviewButton.disabled = false;
       setStatus("HTML generiert.");
     } catch (error) {
       setStatus(error.message);
@@ -266,9 +293,30 @@ search_exclude: true
     }
   }
 
-  async function copyHtml() {
+  async function copyCode() {
     await navigator.clipboard.writeText(outputEl.value);
-    setStatus("HTML in die Zwischenablage kopiert.");
+    setStatus("HTML-Code in die Zwischenablage kopiert.");
+  }
+
+  async function copyPreview() {
+    const previewDocument = new DOMParser().parseFromString(outputEl.value, "text/html");
+    const previewStyles = Array.from(previewDocument.head.querySelectorAll("style"))
+      .map((style) => style.outerHTML)
+      .join("");
+    const htmlContent = previewStyles + previewDocument.body.innerHTML;
+    const textContent = previewDocument.body.textContent.trim();
+
+    if (typeof ClipboardItem === "undefined") {
+      await navigator.clipboard.writeText(textContent);
+    } else {
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          "text/html": new Blob([htmlContent], { type: "text/html" }),
+          "text/plain": new Blob([textContent], { type: "text/plain" }),
+        }),
+      ]);
+    }
+    setStatus("Formatierte Vorschau in die Zwischenablage kopiert.");
   }
 
   modeInputs.forEach((input) => {
@@ -280,5 +328,6 @@ search_exclude: true
   showCodeButton.addEventListener("click", () => setOutputView("code"));
   showPreviewButton.addEventListener("click", () => setOutputView("preview"));
   generateButton.addEventListener("click", generateHtml);
-  copyButton.addEventListener("click", copyHtml);
+  copyCodeButton.addEventListener("click", copyCode);
+  copyPreviewButton.addEventListener("click", copyPreview);
 </script>
