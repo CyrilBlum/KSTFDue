@@ -233,48 +233,60 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         f"  <title>{escaped_title}</title>",
         "  <style>",
         "    body { font-family: Arial, sans-serif; margin: 2rem; color: #222; line-height: 1.5; }",
-        "    h1 { font-size: 1.75rem; margin: 0 0 1rem; }",
         "    h2 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; border-bottom: 1px solid #bbb; padding-bottom: .25rem; }",
-        "    table { width: 100%; border-collapse: collapse; }",
-        "    td { padding: .5rem .25rem; border-bottom: 1px solid #e5e5e5; vertical-align: top; }",
-        "    .event-when { width: 10rem; padding-right: 1.25rem; }",
-        "    .event-date { display: block; font-weight: 700; }",
-        "    .event-weekday, .event-time { display: block; color: #555; font-size: .9rem; }",
-        "    .event-time { margin-top: .1rem; font-weight: 600; }",
+        "    table { width: 100%; table-layout: fixed; border-collapse: collapse; }",
+        "    .col-weekday { width: 14%; }",
+        "    .col-date { width: 16%; }",
+        "    .col-time { width: 16%; }",
+        "    .col-content { width: 54%; }",
+        "    th, td { padding: .5rem .75rem .5rem .25rem; text-align: left; vertical-align: top; }",
+        "    th { color: #555; font-size: .8rem; border-bottom: 1px solid #bbb; }",
+        "    td { border-bottom: 1px solid #e5e5e5; }",
+        "    .event-date { font-weight: 700; white-space: nowrap; }",
+        "    .event-time { color: #555; font-weight: 600; white-space: nowrap; }",
+        "    .event-content { overflow-wrap: anywhere; }",
         "    .subscribe { margin-bottom: 1.5rem; }",
         "    @media (max-width: 36rem) {",
-        "      .event-when { width: 8rem; padding-right: .75rem; }",
+        "      body { margin: 1rem; }",
+        "      th, td { padding-right: .5rem; }",
         "    }",
         "  </style>",
         "</head>",
         "<body>",
-        f"<h1>{escaped_title}</h1>",
         f'<p class="subscribe"><a href="{escaped_url}">Kalender abonnieren</a></p>',
     ]
 
     for month_key, month_events in grouped_events.items():
         lines.append(f"<h2>{html.escape(month_headers[month_key])}</h2>")
-        lines.append("<table>")
+        lines.extend([
+            "<table>",
+            "<colgroup>"
+            '<col class="col-weekday">'
+            '<col class="col-date">'
+            '<col class="col-time">'
+            '<col class="col-content">'
+            "</colgroup>",
+            "<thead><tr>"
+            "<th>Wochentag</th>"
+            "<th>Datum</th>"
+            "<th>Zeit</th>"
+            "<th>Inhalt / Text</th>"
+            "</tr></thead>",
+            "<tbody>",
+        ])
 
         for event in month_events:
             date_str, day_display, time_display = event_display_values(event)
-            time_html = (
-                f'<span class="event-time">{html.escape(time_display)}</span>'
-                if time_display
-                else ""
-            )
             lines.append(
                 "<tr>"
-                '<td class="event-when">'
-                f'<span class="event-date">{html.escape(date_str)}</span>'
-                f'<span class="event-weekday">{html.escape(day_display)}</span>'
-                f"{time_html}"
-                "</td>"
-                f"<td>{html.escape(event_description(event))}</td>"
+                f'<td class="event-weekday">{html.escape(day_display)}</td>'
+                f'<td class="event-date">{html.escape(date_str)}</td>'
+                f'<td class="event-time">{html.escape(time_display)}</td>'
+                f'<td class="event-content">{html.escape(event_description(event))}</td>'
                 "</tr>"
             )
 
-        lines.append("</table>")
+        lines.extend(["</tbody>", "</table>"])
 
     if not events:
         lines.append("<p>Keine passenden Termine gefunden.</p>")
