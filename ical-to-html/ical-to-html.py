@@ -224,7 +224,6 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         month_headers[month_key] = month_header
 
     escaped_title = html.escape(title)
-    escaped_url = html.escape(subscribe_url, quote=True)
 
     lines = [
         "<!DOCTYPE html>",
@@ -246,7 +245,6 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         "    td { border-bottom: 1px solid #e5e5e5; }",
         "    .event-date { font-weight: 700; }",
         "    .event-time { color: #555; font-weight: 600; }",
-        "    .subscribe { margin-bottom: 1.5rem; }",
         "    @media (max-width: 36rem) {",
         "      body { margin: 1rem; }",
         "      th, td { padding-right: .5rem; }",
@@ -254,7 +252,6 @@ def generate_calendar_html(ical_content, limit=None, title="Kalender", subscribe
         "  </style>",
         "</head>",
         "<body>",
-        f'<p class="subscribe"><a href="{escaped_url}">Kalender abonnieren</a></p>',
     ]
 
     for month_key, month_events in grouped_events.items():
