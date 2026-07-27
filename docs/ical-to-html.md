@@ -304,7 +304,6 @@ search_exclude: true
     const portableElements = [portableBody, ...portableBody.querySelectorAll("*")];
     const portableProperties = [
       "font-family", "font-size", "font-style", "font-weight", "color", "line-height",
-      "background-color",
       "text-align", "vertical-align", "white-space", "overflow-wrap",
       "margin-top", "margin-right", "margin-bottom", "margin-left",
       "padding-top", "padding-right", "padding-bottom", "padding-left",
