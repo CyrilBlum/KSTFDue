@@ -19,6 +19,8 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 Öffnen Sie PowerShell als Administrator und führen Sie den gesamten Block aus.
 
+> **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
+
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host " HMS-Schnellinstallation – Windows"     -ForegroundColor Cyan

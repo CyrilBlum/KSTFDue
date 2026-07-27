@@ -11,7 +11,7 @@ Diese Seite bündelt die wichtigsten Installationsschritte in je **einem Block f
 
 Diese Schnellinstallation ist speziell auf die Bedürfnisse des Kurzzeitgymnasiums (KG) zugeschnitten und enthält alle Programme, die für die meisten Fachschaften relevant sind. Sie bietet eine effiziente Möglichkeit, die benötigte Software mit minimalem Aufwand zu installieren.
 
-Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
+Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V / Ctrl+V im Terminal bzw. PowerShell einfügen und mit Enter ausführen.
 
 Die Schnellinstallation kann je nach System und Internetverbindung einige Minuten bis zu über einer Stunde dauern.
 
@@ -20,6 +20,8 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 ## Windows (winget)
 
 Öffnen Sie **PowerShell als Administrator** und führen Sie den gesamten Block aus.
+
+> **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
 
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
