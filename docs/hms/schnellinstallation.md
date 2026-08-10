@@ -145,5 +145,3 @@ Installieren Sie MEGA danach erneut:
 ```bash
 brew install --cask mega
 ```
-
-![Fehlermeldung: Für MEGA wird Rosetta 2 benötigt](../assets/images/mega-rosetta-2-fehler.png)
