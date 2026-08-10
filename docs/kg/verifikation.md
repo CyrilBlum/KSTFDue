@@ -174,6 +174,7 @@ check_app_pattern() {
 echo "--- Alle Fächer ---"
 check_cmd   "Homebrew"             "brew"
 check_cask  "Microsoft Office"     "microsoft-office"
+check_cask  "Microsoft Teams"      "microsoft-teams"
 check_cask  "SafeExamBrowser"      "safe-exam-browser"
 check_cask  "rectangle"            "rectangle"
 

@@ -76,6 +76,8 @@ Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die 
 
 Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
 
+![Passworteingabe im Terminal während der Installation](../assets/images/macos-passwort-eingabe.png)
+
 ```bash
 echo "========================================"
 echo " Schnellinstallation – macOS"
@@ -98,6 +100,7 @@ formulas=(
 # Casks
 casks=(
   microsoft-office
+  microsoft-teams
   safe-exam-browser
   rectangle
   adobe-creative-cloud
@@ -161,3 +164,21 @@ Filius ist unter macOS nicht über Homebrew verfügbar und muss separat installi
 [lernsoftware-filius.de](https://www.lernsoftware-filius.de)
 
 Die macOS-Version herunterladen und installieren.
+
+---
+
+## Problemlösung: MEGA lässt sich nicht installieren
+
+Erscheint bei der Installation von MEGA der Hinweis, dass **Rosetta 2** benötigt wird, führen Sie diesen Befehl im Terminal aus:
+
+```bash
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+Installieren Sie MEGA danach erneut:
+
+```bash
+brew install --cask mega
+```
+
+![Fehlermeldung: Für MEGA wird Rosetta 2 benötigt](../assets/images/mega-rosetta-2-fehler.png)

@@ -15,6 +15,7 @@ Diese Programme werden in allen Fächern benötigt und müssen von allen Schüle
 |---|---|
 | SafeExamBrowser | Cyril Blum (IT) |
 | Microsoft 365 | IT |
+| Microsoft Teams | IT |
 
 ---
 
@@ -54,6 +55,20 @@ brew install --cask microsoft-office
 ```
 
 Danach müssen Sie sich mit der schulischen E-Mail-Adresse anmelden, um die Lizenz zu aktivieren.
+
+---
+
+## Microsoft Teams
+
+Microsoft Teams wird für die schulische Kommunikation und Zusammenarbeit verwendet.
+
+### macOS
+
+```bash
+brew install --cask microsoft-teams
+```
+
+Danach melden Sie sich mit der schulischen E-Mail-Adresse an.
 
 ---
 

@@ -71,6 +71,8 @@ Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die 
 
 Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.
 
+![Passworteingabe im Terminal während der Installation](../assets/images/macos-passwort-eingabe.png)
+
 ```bash
 echo "========================================"
 echo " HMS-Schnellinstallation – macOS"
@@ -88,6 +90,7 @@ brew update
 # Casks
 casks=(
   microsoft-office
+  microsoft-teams
   safe-exam-browser
   rectangle
   adobe-creative-cloud
@@ -126,3 +129,21 @@ echo "========================================"
 echo " Ergebnis: $ok ✅  erfolgreich, $fail ❌  fehlgeschlagen"
 echo "========================================"
 ```
+
+---
+
+## Problemlösung: MEGA lässt sich nicht installieren
+
+Erscheint bei der Installation von MEGA der Hinweis, dass **Rosetta 2** benötigt wird, führen Sie diesen Befehl im Terminal aus:
+
+```bash
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+Installieren Sie MEGA danach erneut:
+
+```bash
+brew install --cask mega
+```
+
+![Fehlermeldung: Für MEGA wird Rosetta 2 benötigt](../assets/images/mega-rosetta-2-fehler.png)

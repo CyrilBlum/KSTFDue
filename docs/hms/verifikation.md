@@ -140,6 +140,7 @@ check_app_pattern() {
 }
 
 echo "--- Allgemein ---"
+check_cask  "Microsoft Teams"      "microsoft-teams"
 check_cask  "SafeExamBrowser"      "safe-exam-browser"
 check_cask  "Rectangle"            "rectangle"
 
