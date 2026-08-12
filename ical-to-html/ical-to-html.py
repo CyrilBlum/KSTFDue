@@ -9,6 +9,7 @@ from datetime import date, datetime, time, timedelta
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
 from urllib.request import urlopen
+from zoneinfo import ZoneInfo
 
 try:
     from icalendar import Calendar
@@ -17,6 +18,8 @@ except ImportError:
 
 
 ICAL_URL = "https://intranet.tam.ch/klw/rest/ics/type/calendar/date/1783439452/auth/gr001@Y3lyaWwuYmx1bQ==:Y2JhMDMyNTkyNmI1NmFiNjAxZTBhN2JmNzA4N2M1ZDNmOWQyMTUwMw==/calendar.ics"
+ZURICH_TIMEZONE = ZoneInfo("Europe/Zurich")
+UTC_TIMEZONE = ZoneInfo("UTC")
 CONVERT_PATHS = {
     "/convert",
     "/ical-to-html/convert",
@@ -48,7 +51,7 @@ def validate_url(url):
 def normalize_dt(value):
     if isinstance(value, datetime):
         if value.tzinfo is not None:
-            return value.replace(tzinfo=None)
+            return value.astimezone(ZURICH_TIMEZONE).replace(tzinfo=None)
         return value
     if isinstance(value, date):
         return datetime.combine(value, time.min)
@@ -79,12 +82,13 @@ def unescape_ical_text(value):
     )
 
 
-def parse_ical_datetime(value):
+def parse_ical_datetime(value, tzid=None):
     value = value.strip()
     if not value:
         return None
 
-    if value.endswith("Z"):
+    is_utc = value.endswith("Z")
+    if is_utc:
         value = value[:-1]
 
     for fmt in ("%Y%m%dT%H%M%S", "%Y%m%dT%H%M", "%Y%m%d"):
@@ -95,6 +99,13 @@ def parse_ical_datetime(value):
 
         if fmt == "%Y%m%d":
             return parsed.date()
+        if is_utc:
+            return parsed.replace(tzinfo=UTC_TIMEZONE).astimezone(ZURICH_TIMEZONE)
+        if tzid:
+            try:
+                return parsed.replace(tzinfo=ZoneInfo(tzid)).astimezone(ZURICH_TIMEZONE)
+            except Exception:
+                pass
         return parsed
 
     return None
@@ -112,8 +123,12 @@ def parse_events_basic(ical_content):
             if current_event is not None:
                 events.append({
                     "summary": current_event.get("SUMMARY", "Ohne Titel"),
-                    "start": parse_ical_datetime(current_event.get("DTSTART", "")),
-                    "end": parse_ical_datetime(current_event.get("DTEND", "")),
+                    "start": parse_ical_datetime(
+                        current_event.get("DTSTART", ""), current_event.get("DTSTART_TZID")
+                    ),
+                    "end": parse_ical_datetime(
+                        current_event.get("DTEND", ""), current_event.get("DTEND_TZID")
+                    ),
                     "description": current_event.get("DESCRIPTION", ""),
                 })
             current_event = None
@@ -121,12 +136,17 @@ def parse_events_basic(ical_content):
         if current_event is None or ":" not in line:
             continue
 
-        key, value = line.split(":", 1)
-        key = key.split(";", 1)[0].upper()
+        key_with_params, value = line.split(":", 1)
+        key, *params = key_with_params.split(";")
+        key = key.upper()
         if key in {"SUMMARY", "DESCRIPTION"}:
             current_event[key] = unescape_ical_text(value)
         elif key in {"DTSTART", "DTEND"}:
             current_event[key] = value
+            for param in params:
+                param_key, separator, param_value = param.partition("=")
+                if separator and param_key.upper() == "TZID":
+                    current_event[f"{key}_TZID"] = param_value.strip('"')
 
     events.sort(key=lambda event: normalize_dt(event["start"]))
     return events
@@ -147,6 +167,10 @@ def parse_events(ical_content):
         end = component.get("dtend")
         start_dt = start.dt if start else None
         end_dt = end.dt if end else None
+        if isinstance(start_dt, datetime) and start_dt.tzinfo is not None:
+            start_dt = start_dt.astimezone(ZURICH_TIMEZONE)
+        if isinstance(end_dt, datetime) and end_dt.tzinfo is not None:
+            end_dt = end_dt.astimezone(ZURICH_TIMEZONE)
         events.append({
             "summary": str(component.get("summary", "Ohne Titel")),
             "start": start_dt,
@@ -159,7 +183,8 @@ def parse_events(ical_content):
 
 
 def is_future_event(event, now=None):
-    now = now or datetime.now()
+    now = now or datetime.now(ZURICH_TIMEZONE)
+    now = normalize_dt(now)
     start = event["start"]
 
     if isinstance(start, datetime):

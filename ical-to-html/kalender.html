@@ -6,211 +6,317 @@
   <title>Kalender</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 2rem; color: #222; line-height: 1.5; }
-    h1 { font-size: 1.75rem; margin: 0 0 1rem; }
     h2 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; border-bottom: 1px solid #bbb; padding-bottom: .25rem; }
-    table { width: 100%; border-collapse: collapse; }
-    td { padding: .5rem .25rem; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
-    td:first-child { width: 7rem; font-weight: 700; }
-    td:nth-child(2) { width: 10rem; color: #555; }
-    .subscribe { margin-bottom: 1.5rem; }
+    table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+    .col-weekday { width: 14%; }
+    .col-date { width: 16%; }
+    .col-time { width: 16%; }
+    .col-content { width: 54%; }
+    th, td { box-sizing: border-box; min-width: 0; overflow: hidden; overflow-wrap: anywhere; padding: .5rem .75rem .5rem .25rem; text-align: left; vertical-align: top; }
+    th { color: #555; font-size: .8rem; border-bottom: 1px solid #bbb; }
+    td { border-bottom: 1px solid #e5e5e5; }
+    .event-date { font-weight: 700; }
+    .event-time { color: #555; font-weight: 600; }
+    @media (max-width: 36rem) {
+      body { margin: 1rem; }
+      th, td { padding-right: .5rem; }
+    }
   </style>
 </head>
 <body>
-<h1>Kalender</h1>
-<p class="subscribe"><a href="https://intranet.tam.ch/klw/rest/ics/type/calendar/date/1783439452/auth/gr001@Y3lyaWwuYmx1bQ==:Y2JhMDMyNTkyNmI1NmFiNjAxZTBhN2JmNzA4N2M1ZDNmOWQyMTUwMw==/calendar.ics">Kalender abonnieren</a></p>
-<h2>Januar 2026</h2>
-<table>
-<tr><td>09.01.2026</td><td>Freitag</td><td>Anmeldeschluss Digitalisierungsprojekt M428</td></tr>
-<tr><td>13.01.2026</td><td>Dienstag</td><td>Wasservogelexkursion SPF Biologie (3cg Ka), Morgen</td></tr>
-<tr><td>13.01.2026</td><td>Dienstag</td><td>Werkschau der musikalischen Maturarbeiten (ab 19 h, Aula und Musiksaal, Einladung folgt)</td></tr>
-<tr><td>17.01.2026</td><td>Samstag, 07:00</td><td>Präsenz für Absenzen, Zimmer 409</td></tr>
-<tr><td>18.01.2026</td><td>Sonntag</td><td>Notenabgabe 1. + 2. Klassen, Zwischennotenabgabe 3. Klassen bis 23.30 Uhr</td></tr>
-<tr><td>20.01.2026</td><td>Dienstag</td><td>SPF Biologie 4ef und 4g (Sf) Uni Zürich</td></tr>
-<tr><td>20.01.2026</td><td>Dienstag</td><td>Wasservogelexkursion SPF Biologie (3h, Sh) Nachmittag</td></tr>
-<tr><td>21.01.2026</td><td>Mittwoch</td><td>Digitales Café, 509, 12.30 - 13.15 Uhr</td></tr>
-<tr><td>21.01.2026</td><td>Mittwoch</td><td>Konvent, 15.15 - 17.30 Uhr</td></tr>
-<tr><td>22.01.2026</td><td>Donnerstag</td><td>Notenkonvente/Zwischennotenkonvente 1. - 2. Klassen, unterrichtsfrei für alle SuS</td></tr>
-<tr><td>23.01.2026</td><td>Freitag</td><td>Gesundheitstag 3. Klassen, Morgen, 8.00 bis 12.20: 3b, 3d, 3e, 3f, 3g; Nachmittag, 13.00 - 16.45 3a, 3c, 3h, 3i (siehe Stundenplan)</td></tr>
-<tr><td>23.01.2026</td><td>Freitag</td><td>Wasservogelexkursion SPF Biologie (3bdf, Ka), Nachmittag</td></tr>
-<tr><td>24.01.2026</td><td>Samstag</td><td>Maturarbeitspräsentationen 4. Klassen</td></tr>
-<tr><td>28.01.2026</td><td>Mittwoch, 06:45</td><td>Chorprobe 1./2. Lektion</td></tr>
-<tr><td>29.01.2026</td><td>Donnerstag</td><td>Kontext am Mittag, Musiksaal, 12.30 Uhr</td></tr>
-<tr><td>30.01.2026</td><td>Freitag</td><td>SPF Biologie 4ae (He) Uni Zürich</td></tr>
-<tr><td>31.01.2026</td><td>Samstag</td><td>Sportferien</td></tr>
-</table>
 <h2>Februar 2026</h2>
-<table>
-<tr><td>02.02.2026</td><td>Montag</td><td>Schneesportlager</td></tr>
-<tr><td>16.02.2026</td><td>Montag</td><td>Start Frühlingssemester 2026</td></tr>
-<tr><td>17.02.2026</td><td>Dienstag, 10:35</td><td>Einführung Maturarbeit für alle 3. Klassen, Musiksaal</td></tr>
-<tr><td>20.02.2026</td><td>Freitag</td><td>Maturarbeit 25/26: letztmöglicher Termin Schlussbesprechung</td></tr>
-<tr><td>21.02.2026</td><td>Samstag</td><td>Fachschaftstage Englisch</td></tr>
-<tr><td>23.02.2026</td><td>Montag</td><td>Fasnachtsmontag</td></tr>
-<tr><td>24.02.2026</td><td>Dienstag</td><td>Abgabe def. Projekte Maturreise 2026 an Sekretariat</td></tr>
-<tr><td>24.02.2026</td><td>Dienstag</td><td>Konvent, 15.15 - 17.30 Uhr</td></tr>
-<tr><td>26.02.2026</td><td>Donnerstag, 11:30</td><td>Informationsveranstaltung Stundenkonto, Zimmer 411 - &amp;nbsp;</td></tr>
-<tr><td>27.02.2026</td><td>Freitag</td><td>Romreise Freifach Italienisch (2/3 Sk) und Latein (3/4 Sm)</td></tr>
-<tr><td>27.02.2026</td><td>Freitag, 06:45</td><td>Orientierung zur Bedeutung der Schwerpunktfächer, für interessierte 2. Klassen, Musiksaal</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">16.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Start Frühlingssemester 2026</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">17.02.2026</td><td class="event-time" width="16%" style="width: 16%;">11:35–12:20</td><td class="event-content" width="54%" style="width: 54%;">Einführung Maturarbeit für alle 3. Klassen, Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">20.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturarbeit 25/26: letztmöglicher Termin Schlussbesprechung</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">21.02.2026 - 25.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Fachschaftstage Englisch</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">23.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Fasnachtsmontag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">24.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe def. Projekte Maturreise 2026 an Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">24.02.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Konvent, 15.15 - 17.30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">26.02.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:30</td><td class="event-content" width="54%" style="width: 54%;">Informationsveranstaltung Stundenkonto, Zimmer 411</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">27.02.2026 - 02.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Romreise Freifach Italienisch (2/3 Sk) und Latein (3/4 Sm)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">27.02.2026</td><td class="event-time" width="16%" style="width: 16%;">07:45–08:30</td><td class="event-content" width="54%" style="width: 54%;">Orientierung zur Bedeutung der Schwerpunktfächer, für interessierte 2. Klassen, Musiksaal</td></tr>
+</tbody>
 </table>
 <h2>März 2026</h2>
-<table>
-<tr><td>02.03.2026</td><td>Montag</td><td>Aufnahmeprüfung ZAP</td></tr>
-<tr><td>02.03.2026</td><td>Montag</td><td>Wirtschaftswoche 3. Klassen</td></tr>
-<tr><td>04.03.2026</td><td>Mittwoch, 16:00</td><td>MA-Jury Sitzung</td></tr>
-<tr><td>05.03.2026</td><td>Donnerstag</td><td>Austauschtreffen mit Morges, Klasse 2e (Hü), Tagesausflug</td></tr>
-<tr><td>06.03.2026</td><td>Freitag</td><td>Rendez-vous (Austauschtreffen VD-ZH)</td></tr>
-<tr><td>07.03.2026</td><td>Samstag</td><td>Chorprobe mit Stadtmusik für Carmina Burana, Aula, 9 -13 Uhr</td></tr>
-<tr><td>09.03.2026</td><td>Montag</td><td>Anmeldeschluss Schwerpunktfach 2. Klassen, 12:00 Uhr</td></tr>
-<tr><td>10.03.2026</td><td>Dienstag, 11:30</td><td>Informationsveranstaltung Stundenkonto, Zimmer 411 - &amp;nbsp;</td></tr>
-<tr><td>10.03.2026</td><td>Dienstag, 11:30</td><td>Kontext am Mittag, Iran, Musiksaal</td></tr>
-<tr><td>13.03.2026</td><td>Freitag</td><td>Besuchstag</td></tr>
-<tr><td>13.03.2026</td><td>Freitag</td><td>Prämierungsfeier Maturarbeiten, 17.15 Uhr Musiksaal</td></tr>
-<tr><td>16.03.2026</td><td>Montag</td><td>Exkursion ETH Gg (Hn) 4h, 10.40 - 13.25 Uhr; 4d 14.20 - 16.30 Uhr</td></tr>
-<tr><td>19.03.2026</td><td>Donnerstag</td><td>Känguru-Wettbewerb, 1. und 2. Lektion für teilnehmende SuS (3. und 4. Klassen); Liste folgt</td></tr>
-<tr><td>20.03.2026</td><td>Freitag</td><td>Journée de la Francophonie, Projekt für die 3. Klassen, Lektionen 2 - 5</td></tr>
-<tr><td>20.03.2026</td><td>Freitag</td><td>Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Première 19:30 Uhr, Aula</td></tr>
-<tr><td>20.03.2026</td><td>Freitag, 07:00</td><td>Känguru-Wettbewerb, 1. und 2. Lektion für teilnehmende SuS (1. und 2. Klassen); Liste folgt</td></tr>
-<tr><td>21.03.2026</td><td>Samstag</td><td>Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Aufführung 19.30 Uhr, Aula</td></tr>
-<tr><td>22.03.2026</td><td>Sonntag</td><td>Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Dernière, 17 Uhr, Aula</td></tr>
-<tr><td>23.03.2026</td><td>Montag, 15:10</td><td>Chorprobe</td></tr>
-<tr><td>25.03.2026</td><td>Mittwoch, 11:30</td><td>Kontext am Mittag, Musiksaal - &amp;nbsp;</td></tr>
-<tr><td>27.03.2026</td><td>Freitag</td><td>Carmina Burana, Hauptprobe, Stadttheater, 16.30 - 20 Uhr</td></tr>
-<tr><td>28.03.2026</td><td>Samstag</td><td>Carmina Burana, Generalprobe, Stadttheater, 14.30 Uhr</td></tr>
-<tr><td>28.03.2026</td><td>Samstag</td><td>Chorkonzert &quot;Carmina Burana&quot; mit Stadtmusik Winterthur, 19.30 Uhr, Theater Winterthur - &amp;nbsp;</td></tr>
-<tr><td>28.03.2026</td><td>Samstag, 07:00</td><td>Präsenz für Absenzen, Zimmer 409</td></tr>
-<tr><td>29.03.2026</td><td>Sonntag</td><td>Carmina Burana, Vorprobe,</td></tr>
-<tr><td>29.03.2026</td><td>Sonntag</td><td>Chorkonzert &quot;Carmina Burana&quot; mit Stadtmusik Winterthur, 17.00 Uhr, Theater Winterthur - &amp;nbsp;</td></tr>
-<tr><td>31.03.2026</td><td>Dienstag</td><td>Fachschaftstage Musik</td></tr>
-<tr><td>31.03.2026</td><td>Dienstag, 14:00</td><td>Einsichtnahme ZAP, Mensa</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">02.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Aufnahmeprüfung ZAP</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">02.03.2026 - 06.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Wirtschaftswoche 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">04.03.2026</td><td class="event-time" width="16%" style="width: 16%;">17:00–19:00</td><td class="event-content" width="54%" style="width: 54%;">MA-Jury Sitzung</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">05.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Austauschtreffen mit Morges, Klasse 2e (Hü), Tagesausflug</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">06.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Rendez-vous (Austauschtreffen VD-ZH)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">07.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Chorprobe mit Stadtmusik für Carmina Burana, Aula, 9 -13 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">09.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Schwerpunktfach 2. Klassen, 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">10.03.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:30</td><td class="event-content" width="54%" style="width: 54%;">Informationsveranstaltung Stundenkonto, Zimmer 411</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">10.03.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:20</td><td class="event-content" width="54%" style="width: 54%;">Kontext am Mittag, Iran, Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">13.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Besuchstag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">13.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Prämierungsfeier Maturarbeiten, 17.15 Uhr Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">16.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion ETH Gg (Hn) 4h, 10.40 - 13.25 Uhr; 4d 14.20 - 16.30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">19.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Känguru-Wettbewerb, 1. und 2. Lektion für teilnehmende SuS (3. und 4. Klassen); Liste folgt</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">20.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Journée de la Francophonie, Projekt für die 3. Klassen, Lektionen 2 - 5</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">20.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Première 19:30 Uhr, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">20.03.2026</td><td class="event-time" width="16%" style="width: 16%;">08:00–08:30</td><td class="event-content" width="54%" style="width: 54%;">Känguru-Wettbewerb, 1. und 2. Lektion für teilnehmende SuS (1. und 2. Klassen); Liste folgt</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">21.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Aufführung 19.30 Uhr, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">22.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Theateraufführung &quot;Der Geizige&quot;, Komödie von Molière, Dernière, 17 Uhr, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">23.03.2026</td><td class="event-time" width="16%" style="width: 16%;">16:10–17:50</td><td class="event-content" width="54%" style="width: 54%;">Chorprobe</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">25.03.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:30</td><td class="event-content" width="54%" style="width: 54%;">Kontext am Mittag, Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">27.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Carmina Burana, Hauptprobe, Stadttheater, 16.30 - 20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">28.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Carmina Burana, Generalprobe, Stadttheater, 14.30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">28.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Chorkonzert &quot;Carmina Burana&quot; mit Stadtmusik Winterthur, 19.30 Uhr, Theater Winterthur</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">28.03.2026</td><td class="event-time" width="16%" style="width: 16%;">08:00–12:00</td><td class="event-content" width="54%" style="width: 54%;">Präsenz für Absenzen, Zimmer 409</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">29.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Carmina Burana, Vorprobe,</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">29.03.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Chorkonzert &quot;Carmina Burana&quot; mit Stadtmusik Winterthur, 17.00 Uhr, Theater Winterthur</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">31.03.2026 - 01.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Fachschaftstage Musik</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">31.03.2026</td><td class="event-time" width="16%" style="width: 16%;">16:00–19:00</td><td class="event-content" width="54%" style="width: 54%;">Einsichtnahme ZAP, Mensa</td></tr>
+</tbody>
 </table>
 <h2>April 2026</h2>
-<table>
-<tr><td>01.04.2026</td><td>Mittwoch</td><td>Fachschaftstage Biologie</td></tr>
-<tr><td>02.04.2026</td><td>Donnerstag</td><td>Gründonnerstag, Schulschluss 16.00 Uhr</td></tr>
-<tr><td>02.04.2026</td><td>Donnerstag</td><td>SO Osterhasentag</td></tr>
-<tr><td>03.04.2026</td><td>Freitag</td><td>Ostern</td></tr>
-<tr><td>08.04.2026</td><td>Mittwoch</td><td>GV Kantonsschulverein, Musiksaal, abends</td></tr>
-<tr><td>10.04.2026</td><td>Freitag</td><td>&quot;Physikalische Häppchen&quot;, Veranstaltung der Fachschaft Physik für interessierte Lehrpersonen, 12.30 -13.00 Uhr</td></tr>
-<tr><td>10.04.2026</td><td>Freitag</td><td>12:00 Uhr Maturitätsarbeit 26/27 Anmeldeschluss durch SuS via MS Forms - &amp;nbsp;</td></tr>
-<tr><td>10.04.2026</td><td>Freitag</td><td>Exkursion PAM SP 4ae (Ps),  9 - 12 Uhr</td></tr>
-<tr><td>10.04.2026</td><td>Freitag</td><td>Exkursion SFF Musik 4bch nach St. Gallen (Nu), Nachmittag</td></tr>
-<tr><td>10.04.2026</td><td>Freitag</td><td>Exkursion SPF BG/F (Gb, La) 4b/c und 3i (SPF BG) ab Lektion 4</td></tr>
-<tr><td>11.04.2026</td><td>Samstag, 07:00</td><td>Eignungstest (EMS) Probelauf, Kantonsschule Büelrain</td></tr>
-<tr><td>13.04.2026</td><td>Montag</td><td>Exkursion Geschichte 1b, 1d (Bc, Gr), Lektionen 1 - 3</td></tr>
-<tr><td>15.04.2026</td><td>Mittwoch</td><td>Konvent, 15.15 - 17.30 Uhr</td></tr>
-<tr><td>16.04.2026</td><td>Donnerstag</td><td>Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder), Premiere, 19.30 Uhr Musiksaal</td></tr>
-<tr><td>16.04.2026</td><td>Donnerstag</td><td>Fachschaftstage Romanistik</td></tr>
-<tr><td>17.04.2026</td><td>Freitag</td><td>Anmeldeschluss Freifächer, 12.00 Uhr - &amp;nbsp;</td></tr>
-<tr><td>17.04.2026</td><td>Freitag</td><td>Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder),  19.30 Uhr Musiksaal</td></tr>
-<tr><td>17.04.2026</td><td>Freitag</td><td>Exkursion PAM SP 4ef (Ps), 9 - 12 Uhr</td></tr>
-<tr><td>18.04.2026</td><td>Samstag</td><td>Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder), 15.00 Uhr; 19.30 Uhr Dernière</td></tr>
-<tr><td>18.04.2026</td><td>Samstag</td><td>Frühlingsferien</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">01.04.2026 - 02.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Fachschaftstage Biologie</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">02.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Gründonnerstag, Schulschluss 16.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">02.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">SO Osterhasentag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">03.04.2026 - 06.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ostern</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">08.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">GV Kantonsschulverein, Musiksaal, abends</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">10.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">&quot;Physikalische Häppchen&quot;, Veranstaltung der Fachschaft Physik für interessierte Lehrpersonen, 12.30 -13.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">10.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">12:00 Uhr Maturitätsarbeit 26/27 Anmeldeschluss durch SuS via MS Forms</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">10.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion PAM SP 4ae (Ps),  9 - 12 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">10.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion SFF Musik 4bch nach St. Gallen (Nu), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">10.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion SPF BG/F (Gb, La) 4b/c und 3i (SPF BG) ab Lektion 4</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">11.04.2026</td><td class="event-time" width="16%" style="width: 16%;">09:00–14:00</td><td class="event-content" width="54%" style="width: 54%;">Eignungstest (EMS) Probelauf, Kantonsschule Büelrain</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">13.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Geschichte 1b, 1d (Bc, Gr), Lektionen 1 - 3</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">15.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Konvent, 15.15 - 17.30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">16.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder), Premiere, 19.30 Uhr Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">16.04.2026 - 17.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Fachschaftstage Romanistik</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">17.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Freifächer, 12.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">17.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder),  19.30 Uhr Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">17.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion PAM SP 4ef (Ps), 9 - 12 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">18.04.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ehemaligen-Theater EnsembLee: &quot;Auf dem Zahnfleisch&quot; (Thornton Wilder), 15.00 Uhr; 19.30 Uhr Dernière</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">18.04.2026 - 03.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Frühlingsferien</td></tr>
+</tbody>
 </table>
 <h2>Mai 2026</h2>
-<table>
-<tr><td>01.05.2026</td><td>Freitag</td><td>Tag der Arbeit</td></tr>
-<tr><td>03.05.2026</td><td>Sonntag</td><td>Eintragen der Zwischennoten 1. und 2. Klassen bis 23:30 Uhr</td></tr>
-<tr><td>05.05.2026</td><td>Dienstag, 09:35</td><td>Infoveranstaltung Stundenkonto, Zimmer 512 - &amp;nbsp;</td></tr>
-<tr><td>06.05.2026</td><td>Mittwoch</td><td>Anmeldeschluss individueller Sprachaufenthalt 2. Klassen</td></tr>
-<tr><td>07.05.2026</td><td>Donnerstag</td><td>Tössexkursion SFF Biologie 3bdf (Ka), Nachmittag</td></tr>
-<tr><td>08.05.2026</td><td>Freitag</td><td>Abgabe Vormaturprüfungen an Fachvorstände</td></tr>
-<tr><td>08.05.2026</td><td>Freitag</td><td>Tössexkursion SFF Biologie 3cg (Ka), Nachmittag</td></tr>
-<tr><td>12.05.2026</td><td>Dienstag</td><td>Exkursion Dottikon SPF Chemie, 4ae (Bg), 4ef (Mk), 4g (De), Nachmittag</td></tr>
-<tr><td>13.05.2026</td><td>Mittwoch</td><td>Abgabe Prüfungsaufgaben Matur schriftlich an Fachschaftsvorstände</td></tr>
-<tr><td>13.05.2026</td><td>Mittwoch</td><td>Schulschluss 16.00 Uhr - &amp;nbsp;</td></tr>
-<tr><td>14.05.2026</td><td>Donnerstag</td><td>Auffahrtsbrücke</td></tr>
-<tr><td>18.05.2026</td><td>Montag</td><td>Abgabe Vormaturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
-<tr><td>18.05.2026</td><td>Montag</td><td>Krach unterm Dach, Musiksaal, 19 Uhr</td></tr>
-<tr><td>18.05.2026</td><td>Montag</td><td>Prüfungssperre 3. Klassen</td></tr>
-<tr><td>19.05.2026</td><td>Dienstag</td><td>Prämierungsfeier Maturarbeiten durch Kanton, 19 Uhr</td></tr>
-<tr><td>21.05.2026</td><td>Donnerstag</td><td>Abgabe Maturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
-<tr><td>21.05.2026</td><td>Donnerstag</td><td>Tössexkursion SFF Biologie 3ae (He) und 3h (Sh), Nachmittag</td></tr>
-<tr><td>22.05.2026</td><td>Freitag</td><td>Letzter Schultag Maturklassen</td></tr>
-<tr><td>25.05.2026</td><td>Montag</td><td>Pfingstmontag</td></tr>
-<tr><td>26.05.2026</td><td>Dienstag</td><td>Konvent, 15.15 - 17.30 Uhr</td></tr>
-<tr><td>26.05.2026</td><td>Dienstag</td><td>Latinumsprüfung schriftlich</td></tr>
-<tr><td>26.05.2026</td><td>Dienstag</td><td>Notenabgabe 4. Klassen bis 12:00 Uhr</td></tr>
-<tr><td>28.05.2026</td><td>Donnerstag</td><td>4.-Klass-Zeugnisse können im Sekretariat abgeholt werden (von SuS)</td></tr>
-<tr><td>29.05.2026</td><td>Freitag</td><td>Schriftliche und mündliche Vormaturprüfung</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">01.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Tag der Arbeit</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">03.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eintragen der Zwischennoten 1. und 2. Klassen bis 23:30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">05.05.2026</td><td class="event-time" width="16%" style="width: 16%;">11:35–12:20</td><td class="event-content" width="54%" style="width: 54%;">Infoveranstaltung Stundenkonto, Zimmer 512</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">06.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss individueller Sprachaufenthalt 2. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">07.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Tössexkursion SFF Biologie 3bdf (Ka), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">08.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe Vormaturprüfungen an Fachvorstände</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">08.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Tössexkursion SFF Biologie 3cg (Ka), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">12.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Dottikon SPF Chemie, 4ae (Bg), 4ef (Mk), 4g (De), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">13.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe Prüfungsaufgaben Matur schriftlich an Fachschaftsvorstände</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">13.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Schulschluss 16.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">14.05.2026 - 15.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Auffahrtsbrücke</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">18.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe Vormaturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">18.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Krach unterm Dach, Musiksaal, 19 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">18.05.2026 - 29.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Prüfungssperre 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">19.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Prämierungsfeier Maturarbeiten durch Kanton, 19 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">21.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe Maturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">21.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Tössexkursion SFF Biologie 3ae (He) und 3h (Sh), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">22.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Letzter Schultag Maturklassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">25.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Pfingstmontag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">26.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Konvent, 15.15 - 17.30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">26.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Latinumsprüfung schriftlich</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">26.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Notenabgabe 4. Klassen bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">28.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">4.-Klass-Zeugnisse können im Sekretariat abgeholt werden (von SuS)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">29.05.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Schriftliche und mündliche Vormaturprüfung</td></tr>
+</tbody>
 </table>
 <h2>Juni 2026</h2>
-<table>
-<tr><td>01.06.2026</td><td>Montag</td><td>Schriftliche Maturprüfungen</td></tr>
-<tr><td>09.06.2026</td><td>Dienstag</td><td>Spieltag 1. - 3. Klassen</td></tr>
-<tr><td>09.06.2026</td><td>Dienstag</td><td>Treffen Assistent*innen Naturwisschenschaften</td></tr>
-<tr><td>10.06.2026</td><td>Mittwoch</td><td>1. Klassen: Präventionshalbtag &quot;Sexuelle Gesundheit&quot; und Einführung MINT-Labor (Halbtage 8.30 - 12.00 Uhr; 13.00 Uhr - 16.30 Uhr)</td></tr>
-<tr><td>10.06.2026</td><td>Mittwoch</td><td>2. Klassen: Präventionshalbtag &quot;Rausch und Risiko&quot; (Start Musiksaal) und Vorbereitung Exkursion (Halbtage 8.15 Uhr - 12 Uhr, 12.45 - 16.30 Uhr)</td></tr>
-<tr><td>10.06.2026</td><td>Mittwoch</td><td>3. Klassen: Fachschaftsmodule Maturarbeit, Einladungen folgen am 3. Juni)</td></tr>
-<tr><td>10.06.2026</td><td>Mittwoch</td><td>Team-Event Mitarbeitende (Nachmittag) - &amp;nbsp;</td></tr>
-<tr><td>11.06.2026</td><td>Donnerstag</td><td>Abgabe korrigierte Maturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
-<tr><td>12.06.2026</td><td>Freitag</td><td>Ausbildungskurs Maturreiseleitung - &amp;nbsp;</td></tr>
-<tr><td>12.06.2026</td><td>Freitag</td><td>Information zum PreCollege, obligatorisch für 3. Klassen mit SPF Musik, 8 - 8. 30 Uhr, 609</td></tr>
-<tr><td>13.06.2026</td><td>Samstag, 06:00</td><td>Präsenz für Absenzen, Zimmer 409</td></tr>
-<tr><td>17.06.2026</td><td>Mittwoch</td><td>Latinumsprüfung mündlich</td></tr>
-<tr><td>18.06.2026</td><td>Donnerstag</td><td>Abgabe korrigierte Vormaturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
-<tr><td>19.06.2026</td><td>Freitag</td><td>Anmeldeschluss Digitalisierungsprojekt M428</td></tr>
-<tr><td>22.06.2026</td><td>Montag</td><td>Digitales Café, 509, 12.30 - 13.15 Uhr</td></tr>
-<tr><td>23.06.2026</td><td>Dienstag</td><td>Mündliche Maturprüfungen</td></tr>
-<tr><td>23.06.2026</td><td>Dienstag</td><td>Stadtexkursion Gg 2a (Bn), 7.45 - 13 Uhr</td></tr>
-<tr><td>26.06.2026</td><td>Freitag</td><td>Sommerfest ab 13:00 Uhr, unterrichtsfrei ab 12:30 Uhr - &amp;nbsp;</td></tr>
-<tr><td>29.06.2026</td><td>Montag</td><td>Allfällige Maturkonvente ab 7:45 Uhr</td></tr>
-<tr><td>29.06.2026</td><td>Montag</td><td>BIZ-Besuch in Oerlikon, Klasse 3f, 3i am Morgen, Klasse 3g am Nachmittag (vgl. Stundenplan)</td></tr>
-<tr><td>29.06.2026</td><td>Montag</td><td>Notenabgabe 1. - 3. Klassen bis 12:00 Uhr</td></tr>
-<tr><td>30.06.2026</td><td>Dienstag</td><td>BIZ-Besuch in Oerlikon, Klasse 3e, 3h am Morgen (vgl. Stundenplan)</td></tr>
-<tr><td>30.06.2026</td><td>Dienstag</td><td>Exkursion Technorama 1e (Physik, Ro), Nachmittag</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">01.06.2026 - 05.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Schriftliche Maturprüfungen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">09.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Spieltag 1. - 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">09.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Treffen Assistent*innen Naturwisschenschaften</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">10.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">1. Klassen: Präventionshalbtag &quot;Sexuelle Gesundheit&quot; und Einführung MINT-Labor (Halbtage 8.30 - 12.00 Uhr; 13.00 Uhr - 16.30 Uhr)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">10.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">2. Klassen: Präventionshalbtag &quot;Rausch und Risiko&quot; (Start Musiksaal) und Vorbereitung Exkursion (Halbtage 8.15 Uhr - 12 Uhr, 12.45 - 16.30 Uhr)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">10.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">3. Klassen: Fachschaftsmodule Maturarbeit, Einladungen folgen am 3. Juni)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">10.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Team-Event Mitarbeitende (Nachmittag)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">11.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe korrigierte Maturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">12.06.2026 - 13.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ausbildungskurs Maturreiseleitung</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">12.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Information zum PreCollege, obligatorisch für 3. Klassen mit SPF Musik, 8 - 8. 30 Uhr, 609</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">13.06.2026</td><td class="event-time" width="16%" style="width: 16%;">08:00–12:00</td><td class="event-content" width="54%" style="width: 54%;">Präsenz für Absenzen, Zimmer 409</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">17.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Latinumsprüfung mündlich</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">18.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Abgabe korrigierte Vormaturprüfungen im Sekretariat bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">19.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Digitalisierungsprojekt M428</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">22.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Digitales Café, 509, 12.30 - 13.15 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">23.06.2026 - 25.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Mündliche Maturprüfungen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">23.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Stadtexkursion Gg 2a (Bn), 7.45 - 13 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">26.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Sommerfest ab 13:00 Uhr, unterrichtsfrei ab 12:30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">29.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Allfällige Maturkonvente ab 7:45 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">29.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">BIZ-Besuch in Oerlikon, Klasse 3f, 3i am Morgen, Klasse 3g am Nachmittag (vgl. Stundenplan)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">29.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Notenabgabe 1. - 3. Klassen bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">30.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">BIZ-Besuch in Oerlikon, Klasse 3e, 3h am Morgen (vgl. Stundenplan)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">30.06.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Technorama 1e (Physik, Ro), Nachmittag</td></tr>
+</tbody>
 </table>
 <h2>Juli 2026</h2>
-<table>
-<tr><td>01.07.2026</td><td>Mittwoch</td><td>Instrumentalprüfungen M-Profil 3. Klassen</td></tr>
-<tr><td>01.07.2026</td><td>Mittwoch</td><td>Notenkonvente 1. - 3. Klassen, SuS unterrichtsfrei</td></tr>
-<tr><td>02.07.2026</td><td>Donnerstag</td><td>BIZ-Besuch in Oerlikon, Klasse 3c, 3d am Morgen (vgl. Stundenplan)</td></tr>
-<tr><td>03.07.2026</td><td>Freitag</td><td>BIZ-Besuch in Oerlikon, Klasse 3a, 3b am Morgen (vgl. Stundenplan)</td></tr>
-<tr><td>03.07.2026</td><td>Freitag</td><td>Eignungstest Medizinstudium EMS - &amp;nbsp;</td></tr>
-<tr><td>03.07.2026</td><td>Freitag</td><td>Exkursion Technorama 3g (Physik, Ro), Nachmittag</td></tr>
-<tr><td>03.07.2026</td><td>Freitag, 09:00</td><td>Einsichtnahme Maturprüfungen</td></tr>
-<tr><td>04.07.2026</td><td>Samstag</td><td>Maturfeier im Stadthaus 4a-4d um 9.00 Uhr, 4e-4h um 11.00 Uhr - &amp;nbsp;</td></tr>
-<tr><td>06.07.2026</td><td>Montag</td><td>Interessenwoche 1. + 2. Klassen, Maturreise 3. Klassen</td></tr>
-<tr><td>11.07.2026</td><td>Samstag</td><td>Sommerferien</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">01.07.2026 - 02.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Instrumentalprüfungen M-Profil 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">01.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Notenkonvente 1. - 3. Klassen, SuS unterrichtsfrei</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">02.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">BIZ-Besuch in Oerlikon, Klasse 3c, 3d am Morgen (vgl. Stundenplan)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">03.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">BIZ-Besuch in Oerlikon, Klasse 3a, 3b am Morgen (vgl. Stundenplan)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">03.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eignungstest Medizinstudium EMS</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">03.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Technorama 3g (Physik, Ro), Nachmittag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">03.07.2026</td><td class="event-time" width="16%" style="width: 16%;">11:00–12:00</td><td class="event-content" width="54%" style="width: 54%;">Einsichtnahme Maturprüfungen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">04.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturfeier im Stadthaus 4a-4d um 9.00 Uhr, 4e-4h um 11.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">06.07.2026 - 10.07.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Interessenwoche 1. + 2. Klassen, Maturreise 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">11.07.2026 - 16.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Sommerferien</td></tr>
+</tbody>
 </table>
 <h2>August 2026</h2>
-<table>
-<tr><td>17.08.2026</td><td>Montag</td><td>Schuljahresbeginn</td></tr>
-<tr><td>21.08.2026</td><td>Freitag</td><td>Def. Projekteingabe Exkursion ans Sekretariat - &amp;nbsp;</td></tr>
-<tr><td>25.08.2026</td><td>Dienstag, 13:15</td><td>Konvent 15.15 - 17.30; anschliessend Apéro zum Schulanfang für Mitarbeitende und LP</td></tr>
-<tr><td>28.08.2026</td><td>Freitag, 05:30</td><td>Prüfung &quot;Grundkompetenzen in Mathematik&quot; für alle 3. Klassen</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">13.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Grillieren auf der Dachterrasse, ab 17 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">17.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Einführungsprogramm 1. Klassen nach separater Liste</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">17.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Schuljahresbeginn</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">17.08.2026</td><td class="event-time" width="16%" style="width: 16%;">17:00–18:00</td><td class="event-content" width="54%" style="width: 54%;">Begrüssung und Information für neue LP, 512</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">21.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Def. Projekteingabe Exkursion und SPF-Wochen ans Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">21.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eingabe Ausschreibungstexte IDTW an Hf</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">21.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eingabe Info/Programm Klassentag ans Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">21.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Meldung Hauptleitende Maturreisen 2027 ans Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">25.08.2026</td><td class="event-time" width="16%" style="width: 16%;">15:15–17:30</td><td class="event-content" width="54%" style="width: 54%;">Konvent 15.15 - 17.30; anschliessend Apéro zum Schulanfang für Mitarbeitende und LP</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">27.08.2026</td><td class="event-time" width="16%" style="width: 16%;">18:30–20:00</td><td class="event-content" width="54%" style="width: 54%;">Intermundo Infoanlass Schulaustausch/Auslandaufenthalt, Veranstalter EMW, Mensa Rychenberg</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">28.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturarbeit 26/27: Titel- und Projektabgabe gemäss &quot;vademecum&quot;</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">28.08.2026</td><td class="event-time" width="16%" style="width: 16%;">07:30–08:30</td><td class="event-content" width="54%" style="width: 54%;">Prüfung &quot;Grundkompetenzen in Mathematik&quot; für alle 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">31.08.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Ausschreibungsstart IDTW 2. Klassen (Infos folgen)</td></tr>
+</tbody>
 </table>
 <h2>September 2026</h2>
-<table>
-<tr><td>02.09.2026</td><td>Mittwoch</td><td>Studieninformationstage der Uni und ETH Zürich 4. Klassen - &amp;nbsp;</td></tr>
-<tr><td>03.09.2026</td><td>Donnerstag</td><td>Elternabend 1. Klassen - &amp;nbsp;</td></tr>
-<tr><td>04.09.2026</td><td>Freitag</td><td>3beh SPF-BG-Tag (Fr und Gb)</td></tr>
-<tr><td>08.09.2026</td><td>Dienstag</td><td>Klassentag 1. Klassen, Sporttag 2. - 4. Klasse, Jokertagsperre</td></tr>
-<tr><td>09.09.2026</td><td>Mittwoch</td><td>Konvent 15.15 - 17.30</td></tr>
-<tr><td>09.09.2026</td><td>Mittwoch</td><td>Zürcher Mittelschulsporttag (Liste der beteiligten SuS folgt)</td></tr>
-<tr><td>11.09.2026</td><td>Freitag</td><td>Verschiebedatum Klassentag 1. Klassen, Sporttag 2. -4. Klassen (Jokertagsperre)</td></tr>
-<tr><td>14.09.2026</td><td>Montag</td><td>Hauptprobe Showblock 12 - 18 Uhr, Aula (für beteiligte SuS, Liste folgt)</td></tr>
-<tr><td>16.09.2026</td><td>Mittwoch, 09:35</td><td>Rangverkündigung Sporttag und Showblock, Aula</td></tr>
-<tr><td>17.09.2026</td><td>Donnerstag</td><td>Nachholdatum Sporttag, 17.45 - 20 Uhr</td></tr>
-<tr><td>23.09.2026</td><td>Mittwoch</td><td>Politikveranstaltung, 10.40 - 12.20 Uhr, alle 4. Klassen, Aula</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">02.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Studieninformationstage der Uni und ETH Zürich 4. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">03.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Elternabend 1. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">04.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">3beh SPF-BG-Tag (Fr und Gb)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">08.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Klassentag 1. Klassen, Sporttag 2. - 4. Klasse, Jokertagsperre</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">09.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Zürcher Mittelschulsporttag (Liste der beteiligten SuS folgt)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">09.09.2026</td><td class="event-time" width="16%" style="width: 16%;">15:15–17:30</td><td class="event-content" width="54%" style="width: 54%;">Konvent</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">10.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Startsitzung Maturreise 2027, 17:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">11.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Klassentag 1d und 1h, wenn Sporttag am 8.9.</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">11.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturarbeit 26/27: letzter Termin elektronische Konto-Eröffnung im Intranet durch LP</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">11.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Verschiebedatum Klassentag 1. Klassen, Sporttag 2. -4. Klassen (Jokertagsperre)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">14.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eingabe def. Projekte Klassenlager ans Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">14.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Gg 3d Erdbebensimulator (Zb) ETH ab 15.15 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">14.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Gg 3i Erdbebensimulator (Zb) bis 10.40 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">14.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Hauptprobe Showblock 12 - 18 Uhr, Aula (für beteiligte SuS, Liste folgt)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">14.09.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:15</td><td class="event-content" width="54%" style="width: 54%;">Digitales Café, 509</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">15.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Apfeltag SO</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">16.09.2026</td><td class="event-time" width="16%" style="width: 16%;">11:35–13:15</td><td class="event-content" width="54%" style="width: 54%;">Rangverkündigung Sporttag und Showblock, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">17.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Nachholdatum Sporttag, 17.45 - 20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">22.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Fachwahl Gg/G 4. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">23.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">HSGYM-Tagung Nachmittag (allfälligen Urlaub beantragen)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">23.09.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Politikveranstaltung, 10.40 - 12.20 Uhr, alle 4. Klassen, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">28.09.2026 - 02.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Klassenlager 1. Klassen, IDTW 2. Klassen, Exkursionen 3. Klassen, SPF-Woche 4. Klassen; Jokertagsperre</td></tr>
+</tbody>
 </table>
 <h2>Oktober 2026</h2>
-<table>
-<tr><td>03.10.2026</td><td>Samstag</td><td>Herbstferien</td></tr>
-<tr><td>31.10.2026</td><td>Samstag, 07:00</td><td>Präsenz für Absenzen, Zimmer 409 - &amp;nbsp;</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">03.10.2026 - 18.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Herbstferien</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">20.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss für den obligatorischen Instrumentalunterricht 1. Klassen M-Profil</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">22.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Freifach-Exkursion Latein, 2. und 3. Klasse, ab Lektion 6</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">22.10.2026</td><td class="event-time" width="16%" style="width: 16%;">19:00–20:30</td><td class="event-content" width="54%" style="width: 54%;">Profilwahlabend UG, Aula</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">26.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Kunstfachwahl 1. Klassen (MN, N und PPP)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">26.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss MINT-Tag 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">26.10.2026 - 30.10.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Austauschwoche 3e mit Gymnasium in Morges (genaue Angaben folgen)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">31.10.2026</td><td class="event-time" width="16%" style="width: 16%;">08:00–12:00</td><td class="event-content" width="54%" style="width: 54%;">Präsenz für Absenzen, Zimmer 409</td></tr>
+</tbody>
 </table>
 <h2>November 2026</h2>
-<table>
-<tr><td>06.11.2026</td><td>Freitag</td><td>Erweiterte Chorprobe, 3. Klassen (Mu) und Lee Vocalists, 8.40 - 12.20 Uhr</td></tr>
-<tr><td>09.11.2026</td><td>Montag</td><td>Autoren-Halbtag mit Charles Lewinsky, 3. Klassen Lesung (2. Lektion), 4. Klassen Lesung und Diskussion, (2. - 4. Lektion) - &amp;nbsp;</td></tr>
-<tr><td>09.11.2026</td><td>Montag, 14:15</td><td>Konvent 15.15 - 17.30</td></tr>
-<tr><td>16.11.2026</td><td>Montag</td><td>MINT-Tag 3. Klassen</td></tr>
-<tr><td>17.11.2026</td><td>Dienstag</td><td>Besuch Mathematiker aus Deutschland an die KS Im Lee</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">01.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eintragen der Zwischennoten 1. und 2. Klassen bis 23:30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">03.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">2d Geschichtsexkursion (Bc), 8.40 -10.40 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">04.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">2b Geschichtsexkursion (Bc), 10.35 -12.20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">04.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Zwischennotenkonvente 1a, 1b, 1c, 1d</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">05.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">2e Geschichtsexkursion (Bc), 13.25 -15.00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">05.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Zwischennotenkonvente 1e, 1f, 1g, 1h</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">06.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Erweiterte Chorprobe, 3. Klassen (Mu) und Lee Vocalists, 8.40 - 12.20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">09.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Autoren-Halbtag mit Charles Lewinsky, 3. Klassen Lesung (2. Lektion), 4. Klassen Lesung und Diskussion, (2. - 4. Lektion)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">09.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eingabe prov. Maturreiseprojekte ans Sekretariat</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">09.11.2026</td><td class="event-time" width="16%" style="width: 16%;">15:15–17:30</td><td class="event-content" width="54%" style="width: 54%;">Konvent 15.15 - 17.30</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">13.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Berufsinfomarkt des Kantonsschulvereins Winterthur, ab 15:45 Uhr, Mensa KLW</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">14.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Infomorgen für zukünftige Schülerinnen und Schüler</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">16.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">MINT-Tag 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">17.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Besuch Mathematiker aus Deutschland an die KS Im Lee</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">17.11.2026</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:15</td><td class="event-content" width="54%" style="width: 54%;">Digitales Café, 509</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">23.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturarbeit 26/27: letztmöglicher Termin für Titelanpassung im Intranet durch die SuS</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">25.11.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Romandie Klasse 2e (Sl)</td></tr>
+</tbody>
 </table>
 <h2>Dezember 2026</h2>
-<table>
-<tr><td>01.12.2026</td><td>Dienstag</td><td>Musikalischer Adventskalender, jeweils in der 10-Uhr-Pause im Musiksaal</td></tr>
-<tr><td>18.12.2026</td><td>Freitag</td><td>Weihnachtsfeier, 3. und 4. Lektion, Musiksaal</td></tr>
-<tr><td>19.12.2026</td><td>Samstag</td><td>Weihnachtsferien</td></tr>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">01.12.2026 - 18.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Musikalischer Adventskalender, jeweils in der 10-Uhr-Pause im Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">04.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Physikalische Häppchen für LP, 12.30 - 13.10 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">04.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">SO Samichlaustag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">13.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Eintragen der Zwischennoten 4. Klassen bis 23:30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">18.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Schulschluss nach Stundenplan</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">18.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">SO Volleyballnacht</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">18.12.2026</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Weihnachtsfeier, 3. und 4. Lektion, Musiksaal</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">19.12.2026 - 03.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Weihnachtsferien</td></tr>
+</tbody>
+</table>
+<h2>Januar 2027</h2>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">04.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Maturarbeit 26/27: Abgabe im Sekretariat bis 12:00 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">04.01.2027</td><td class="event-time" width="16%" style="width: 16%;">17:00–19:00</td><td class="event-content" width="54%" style="width: 54%;">Neujahrsapéro</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">06.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Wahl Ergänzungs-/Vormaturfach 3. Klassen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">11.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion Gg Kernkraftwerk Gösgen (Zb), Klassen 4e und 4f (Morgen)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">12.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Werkschau der musikalischen Maturarbeiten (ab 19 Uhr, Aula und Musiksaal, Einladung folgt)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">14.01.2027</td><td class="event-time" width="16%" style="width: 16%;">15:15–17:30</td><td class="event-content" width="54%" style="width: 54%;">Konvent 15.15 - 17.30</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">15.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Anmeldeschluss Digitalisierungsprojekt M428</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">16.01.2027</td><td class="event-time" width="16%" style="width: 16%;">08:00–12:00</td><td class="event-content" width="54%" style="width: 54%;">Präsenz für Absenzen, Zimmer 409</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">20.01.2027</td><td class="event-time" width="16%" style="width: 16%;">12:30–13:15</td><td class="event-content" width="54%" style="width: 54%;">Digitales Café, 509</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">22.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Wasservogel-Exkursion Bio-SPF B°3dfi (Ka), Nachmittag, ab 12.20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Sonntag</td><td class="event-date" width="16%" style="width: 16%;">24.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Notenabgabe 1. + 2. Klassen, Zwischennotenabgabe 3. Klassen bis 23:30 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">25.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Gesundheitshalbtag 3. Klassen, Zuteilungen Morgen/Nachmittag folgen</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Dienstag</td><td class="event-date" width="16%" style="width: 16%;">26.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Wasservogel-Exkursion Bio-SPF B2°3cg (Sf), ganzer Tag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Mittwoch</td><td class="event-date" width="16%" style="width: 16%;">27.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Notenkonvente/Zwischennotenkonvente 1.-3. Klassen, unterrichtsfrei für alle SuS</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">28.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Exkursion EF Geografie (Bn) 7.45 - 12.20 Uhr</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">28.01.2027</td><td class="event-time" width="16%" style="width: 16%;">13:00–17:00</td><td class="event-content" width="54%" style="width: 54%;">HSGYM</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Freitag</td><td class="event-date" width="16%" style="width: 16%;">29.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Wasservogel-Exkursion Bio-SPF B1°3a (Sf), ganzer Tag</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Samstag</td><td class="event-date" width="16%" style="width: 16%;">30.01.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">MA-Präsentationen (3. Klassen, 4. Klassen, LP)</td></tr>
+</tbody>
+</table>
+<h2>Februar 2027</h2>
+<table width="100%" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<colgroup><col class="col-weekday" width="14%" style="width: 14%;"><col class="col-date" width="16%" style="width: 16%;"><col class="col-time" width="16%" style="width: 16%;"><col class="col-content" width="54%" style="width: 54%;"></colgroup>
+<thead><tr><th width="14%" style="width: 14%;">Wochentag</th><th width="16%" style="width: 16%;">Datum</th><th width="16%" style="width: 16%;">Zeit</th><th width="54%" style="width: 54%;">Inhalt / Text</th></tr></thead>
+<tbody>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Montag</td><td class="event-date" width="16%" style="width: 16%;">01.02.2027 - 05.02.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">Probewoche HAIR (3. Klassen, genaue Angaben folgen)</td></tr>
+<tr><td class="event-weekday" width="14%" style="width: 14%;">Donnerstag</td><td class="event-date" width="16%" style="width: 16%;">04.02.2027 - 06.02.2027</td><td class="event-time" width="16%" style="width: 16%;"></td><td class="event-content" width="54%" style="width: 54%;">WB Geografie</td></tr>
+</tbody>
 </table>
 </body>
 </html>
