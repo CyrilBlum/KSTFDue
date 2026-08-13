@@ -72,6 +72,8 @@ Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die 
 
 ## macOS (Homebrew)
 
+> ⚠️ **Wichtig:** Diese Schnellinstallation funktioniert nur mit installiertem Homebrew. Falls Homebrew noch nicht installiert ist, zuerst [Homebrew einrichten](../homebrew.html).
+
 Öffnen Sie Terminal und führen Sie den gesamten Block aus.
 
 Sie müssen sich gegebenenfalls durch die Eingabe Ihres Passworts authentifizieren. Das gewöhnliche Passwort Ihres MacOS-Benutzerkontos ist gemeint, nicht das Apple-ID-Passwort.

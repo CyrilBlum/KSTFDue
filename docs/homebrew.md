@@ -8,6 +8,8 @@ nav_order: 4
 
 Homebrew ist der Paketmanager für macOS. Er wird für alle weiteren Installationen auf macOS vorausgesetzt und muss zuerst eingerichtet werden. Hierzu benötigen Sie Administratorrechte auf Ihrem MacOS-Benutzerkonto.
 
+Das Bier-Icon 🍺 bei Homebrew ist korrekt und gehört zum offiziellen Erscheinungsbild von Homebrew.
+
 **Windows-Nutzer/-innen:** Diese Seite ist nicht relevant – bitte direkt zu den fachspezifischen Installationsseiten wechseln.
 
 Die Codeblöcke können einfach kopiert werden, indem Sie auf das Symbol (📋) im oberen rechnten Teil des Code-Blocks klicken. Danach können Sie den Code-Block per Cmd+V im Terminal einfügen und mit Enter ausführen.
