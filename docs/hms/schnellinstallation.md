@@ -59,9 +59,14 @@ Write-Host "========================================" -ForegroundColor Cyan
 ```
 
 Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die nicht über winget installiert werden können, müssen manuell installiert werden:
-- ApE: Download unter [jorgensen.biology.utah.edu/wayned/ape](https://jorgensen.biology.utah.edu/wayned/ape). Nach dem Download: Das heruntergeladene zip-Archiv entpacken, den Ordner in ApE umbenennen und diesen, sowie dessen Inhalt, in C:\Program Files\ApE verschieben.
-- CellProfiler: Download unter [cellprofiler.org](https://cellprofiler.org). Exe-Datei herunterladen, anklicken und das Programm installieren.
-- ImageJ / Fiji: Download unter [fiji.sc](https://fiji.sc). Nach dem Download: Die heruntergeladene zip-Datei entpacken, den Ordner in Fiji umbenennen und diesen, sowie dessen Inhalt, in C:\Program Files\Fiji verschieben.
+- **ApE**: Download unter [jorgensen.biology.utah.edu/wayned/ape](https://jorgensen.biology.utah.edu/wayned/ape).
+- **CellProfiler**: Download unter [cellprofiler.org](https://cellprofiler.org). Exe-Datei herunterladen, anklicken und das Programm installieren.
+- **ImageJ / Fiji**: Download unter [fiji.sc](https://fiji.sc).
+
+> 💡 **Windows 10: Schritt-für-Schritt-Anleitung für ZIP-Programme (ApE & Fiji):**
+> 1. **ZIP entpacken:** Heruntergeladene `.zip`-Datei im Ordner *Downloads* rechtsklicken → **„Alle extrahieren…“** → unten rechts auf **„Extrahieren“** klicken.
+> 2. **Ordner umbenennen:** Den neu entstandenen entpackten Ordner rechtsklicken → **„Umbenennen“** → Name exakt in `ApE` bzw. `Fiji` ändern.
+> 3. **Nach `C:\Program Files` verschieben:** Den Ordner ausschneiden (`Strg + X`), zu **Dieser PC → Lokaler Datenträger (C:) → Program Files** (bzw. `Programme`) navigieren und dort einfügen (`Strg + V`). Die Administratorabfrage mit **„Fortsetzen“** bestätigen.
 
 ---
 
