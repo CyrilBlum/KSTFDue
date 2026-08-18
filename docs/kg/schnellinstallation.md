@@ -23,14 +23,8 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 > **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
 
-> 🛠️ **Problemlösung bei winget-Fehlern:**  
-> - **Zertifikatsfehler (*„The server certificate did not match any of the expected values“*):**  
->   Führen Sie folgenden Befehl in der PowerShell aus:
->   ```powershell
->   winget settings --enable BypassCertificatePinningForMicrosoftStore
->   ```
-> - **Fehler `403 Forbidden` / *„Nicht zulässig“* (insb. bei GraphPad Prism):**  
->   Dies wird oft durch Schul-Firewalls, IP-Sperren oder den DDoS-Schutz des Herstellers verursacht. Laden Sie das Programm in diesem Fall manuell über den Browser herunter (z. B. für GraphPad unter [graphpad.com/updates](https://www.graphpad.com/updates)) oder wechseln Sie kurzzeitig das Netzwerk (z. B. Handy-Hotspot).
+> 🛠️ **Probleme bei der winget-Installation?**  
+> Falls Zertifikatsfehler, Fehler `403 Forbidden`, der Fehlercode `0x8a15000f` oder andere Abbrüche auftreten, beachten Sie die Hinweise unter [WinGet Problemlösung](../winget.html).
 
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan

@@ -12,7 +12,7 @@ Wo immer möglich werden Anleitungen für **Windows** (mit winget) und **macOS**
 
 ## Hinweise
 
-- **Windows:** Befehle müssen in **PowerShell als Administrator** ausgeführt werden. Falls `winget` den Zertifikatsfehler *„The server certificate did not match any of the expected values“* anzeigt, vorher `winget settings --enable BypassCertificatePinningForMicrosoftStore` ausführen:
+- **Windows:** Befehle müssen in **PowerShell als Administrator** ausgeführt werden. Bei Problemen mit `winget` beachten Sie die [WinGet Problemlösung](docs/winget.html):
 ![PowerShell unter Windows als Administrator](docs/assets/images/PowerShell.png)
 - **macOS:** ⚠️ **Wichtig:** Die Anleitungen funktionieren nur mit installiertem Homebrew. Falls Homebrew noch nicht installiert ist, zuerst die Seite [Homebrew einrichten](docs/homebrew.html) befolgen. Befehle müssen in der **Terminal-App** ausgeführt werden. Öffnen Sie ein **Terminal**, indem Sie die Spotlight-Suche mit Cmd + Leertaste öffnen, Terminal eingeben und mit Enter bestätigen.
 ![Terminal unter macOS öffnen](docs/assets/images/Terminal.png)
@@ -32,4 +32,5 @@ Schnelle Installation und Verwaltung für die Handelsmittelschule:
 
 ## Weitere Tools
 - [⭐️ Deinstallation (Windows & macOS)](docs/deinstallation.html) – Tools entfernen
+- [Windows: WinGet Problemlösung](docs/winget.html)
 - [macOS: Homebrew einrichten](docs/homebrew.html)
