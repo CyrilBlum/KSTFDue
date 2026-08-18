@@ -9,4 +9,4 @@ has_children: true
 
 Auf dieser Seite finden Sie Installationsanleitungen und Installationschecks speziell für das Kurzzeitgymnasium.
 
-Nutzen Sie die **Schnellinstallation** für eine effiziente Installation aller erforderlichen Programme oder folgen Sie den **Fachschaften** für individuelle Installationen nach Bedarf.
+Nutzen Sie die **Schnellinstallation** für eine effiziente Installation aller erforderlichen Programme oder konsultieren Sie die **[Fachschaften](../fachschaften.html)** für individuelle Installationen nach Bedarf.

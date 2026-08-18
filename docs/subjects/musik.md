@@ -9,11 +9,11 @@ nav_order: 6
 
 Programme für den Musikunterricht. Einige Programme sind lizenzpflichtig oder nur für Lehrpersonen vorgesehen.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| MuseScore, BandLab, GarageBand, Ableton, Logic Pro, Dorico Pro, Sibelius | Stephan Pestalozzi, Silvia Strebel |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| MuseScore, BandLab, GarageBand, Ableton, Logic Pro, Dorico Pro, Sibelius | KG & HMS | Stephan Pestalozzi, Silvia Strebel |
 
 ---
 

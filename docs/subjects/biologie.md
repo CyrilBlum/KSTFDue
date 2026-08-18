@@ -9,11 +9,16 @@ nav_order: 3
 
 Programme für den Biologieunterricht. Die meisten Programme werden im Rahmen des BYOD-Konzepts auf dem persönlichen Gerät der Schülerinnen installiert.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| ApE, ImageJ / Fiji, CellProfiler, MEGA, GraphPad Prism, Plickers, Brian | Nadine Ahorn, Benjamin Volkmer |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| MEGA | KG & HMS | Nadine Ahorn, Benjamin Volkmer |
+| GraphPad Prism | KG & HMS | Nadine Ahorn, Benjamin Volkmer |
+| ApE | Nur KG | Nadine Ahorn, Benjamin Volkmer |
+| ImageJ / Fiji | Nur KG | Nadine Ahorn, Benjamin Volkmer |
+| CellProfiler | Nur KG | Nadine Ahorn, Benjamin Volkmer |
+| Plickers, Brian | Lehrpersonen | Nadine Ahorn, Benjamin Volkmer |
 
 ---
 

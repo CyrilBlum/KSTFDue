@@ -9,17 +9,17 @@ nav_order: 7
 
 Diese Plattformen werden im Webbrowser geöffnet und erfordern keine Installation. Der Zugriff erfolgt in der Regel mit der schulischen E-Mail-Adresse.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Plattform | Ansprechperson |
-|---|---|
-| Moodle (LMS) | Cyril Blum |
-| nanoo.tv | Benjamin Volkmer |
-| Digithek | Mediothek |
-| BandLab | Stephan Pestalozzi, Silvia Strebel |
-| canva.com | Lehrperson |
-| classtime, exam2.net, istest2.ch | IT / Lehrpersonen |
-| Expert Teaching Platform | Silvia Strebel |
+| Plattform | Zielgruppe | Ansprechperson |
+|---|---|---|
+| Moodle (LMS) | KG & HMS | Cyril Blum |
+| nanoo.tv | KG & HMS | Benjamin Volkmer |
+| Digithek | KG & HMS | Mediothek |
+| BandLab | KG & HMS | Stephan Pestalozzi, Silvia Strebel |
+| canva.com | KG & HMS | Lehrperson |
+| classtime, exam2.net, istest2.ch | KG & HMS | IT / Lehrpersonen |
+| Expert Teaching Platform | KG & HMS | Silvia Strebel |
 
 ---
 

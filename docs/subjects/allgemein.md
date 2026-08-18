@@ -9,13 +9,13 @@ nav_order: 1
 
 Diese Programme werden in allen Fächern benötigt und müssen von allen Schülerinnen installiert werden.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| SafeExamBrowser | Cyril Blum (IT) |
-| Microsoft 365 | IT |
-| Microsoft Teams | IT |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| SafeExamBrowser | KG & HMS | Cyril Blum (IT) |
+| Microsoft 365 | KG & HMS | IT |
+| Microsoft Teams | KG & HMS | IT |
 
 ---
 

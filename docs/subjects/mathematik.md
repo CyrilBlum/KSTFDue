@@ -9,11 +9,11 @@ nav_order: 5
 
 Programme für den Mathematikunterricht.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| GeoGebra Calculator Suite | Samuel Achermann, Radivoje Bankovic |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| GeoGebra Calculator Suite | KG & HMS | Samuel Achermann, Radivoje Bankovic |
 
 ---
 

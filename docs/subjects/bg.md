@@ -9,12 +9,12 @@ nav_order: 2
 
 Programme für den Unterricht in Bildnerischem Gestalten. Viele Adobe-Programme sind in der Creative Cloud enthalten, die über eine institutionelle Lizenz zur Verfügung steht.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| Adobe Creative Cloud (Photoshop, Illustrator, InDesign, Premiere Pro, Premiere Rush, Fresco) | Nadia Leonhard, Janina Mueller |
-| Blender, Autodesk Tinkercad, Stop Motion Studio | Nadia Leonhard, Janina Mueller |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| Adobe Creative Cloud (Photoshop, Illustrator, InDesign, Premiere Pro, Premiere Rush, Fresco) | KG & HMS | Nadia Leonhard, Janina Mueller |
+| Blender, Autodesk Tinkercad, Stop Motion Studio | KG & HMS | Nadia Leonhard, Janina Mueller |
 
 ---
 

@@ -22,13 +22,15 @@ Schnelle Installation und Verwaltung für das Kurzzeitgymnasium:
 
 - [⭐️ Schnellinstallation (Windows & macOS)](docs/kg/schnellinstallation.html)
 - [⭐️ Installationscheck (Windows & macOS)](docs/kg/verifikation.html)
-- [Fachschaften](docs/kg/fachschaften.html) – Programme nach Fachschaft
 
 ## Handelsmittelschule (HMS)
 Schnelle Installation und Verwaltung für die Handelsmittelschule:
 
 - [⭐️ Schnellinstallation (Windows & macOS)](docs/hms/schnellinstallation.html)
 - [⭐️ Installationscheck (Windows & macOS)](docs/hms/verifikation.html)
+
+## Fachschaften
+- [Fachschaften (Programme nach Fachgebiet)](docs/fachschaften.html)
 
 ## Weitere Tools
 - [⭐️ Deinstallation (Windows & macOS)](docs/deinstallation.html) – Tools entfernen

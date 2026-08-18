@@ -9,11 +9,11 @@ nav_order: 4
 
 Programme für den Informatikunterricht. Alle Programme werden im Rahmen des BYOD-Konzepts auf dem persönlichen Gerät der Schülerinnen installiert.
 
-## Ansprechpersonen
+## Ansprechpersonen & Bildungsgänge
 
-| Programm | Ansprechperson |
-|---|---|
-| VS Code, Python, Filius | Cyril Blum |
+| Programm | Zielgruppe | Ansprechperson |
+|---|---|---|
+| VS Code, Python, Filius | Nur KG | Cyril Blum |
 
 ---
 

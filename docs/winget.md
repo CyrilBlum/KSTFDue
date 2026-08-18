@@ -1,7 +1,7 @@
 ---
 layout: default
 title: WinGet Problemlösung
-nav_order: 5
+nav_order: 6
 ---
 
 # WinGet Problemlösung (Windows)
