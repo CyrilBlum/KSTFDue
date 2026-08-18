@@ -17,12 +17,13 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 ## Windows (winget)
 
-Öffnen Sie PowerShell als Administrator und führen Sie den gesamten Block aus.
+> ⚠️ **Wichtig – PowerShell als Administrator starten:**  
+> Öffnen Sie PowerShell zwingend **als Administrator** (*Windows-Taste → „PowerShell“ eingeben → Rechtsklick → „Als Administrator ausführen“*). Wird PowerShell ohne Administratorrechte gestartet, schlagen die Installationen fehl.
 
 > **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
 
 > 🛠️ **Probleme bei der winget-Installation?**  
-> Falls Zertifikatsfehler, Fehler `403 Forbidden`, der Fehlercode `0x8a15000f` oder andere Abbrüche auftreten, beachten Sie die Hinweise unter [WinGet Problemlösung](../winget.html).
+> Falls Rechtefehler, Zertifikatsfehler, Fehler `403 Forbidden` oder der Fehlercode `0x8a15000f` auftreten, beachten Sie die Hinweise unter [WinGet Problemlösung](../winget.html).
 
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
