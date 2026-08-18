@@ -23,6 +23,12 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 > **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
 
+> 🛠️ **Problemlösung bei winget-Fehlern (z. B. Zertifikatsfehler):**  
+> Falls `winget` beim Herunterladen von Paketen abbricht oder Zertifikatsfehler anzeigt, führen Sie folgenden Befehl in der PowerShell aus:
+> ```powershell
+> winget settings --enable BypassCertificatePinningForMicrosoftStore
+> ```
+
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host " Schnellinstallation – Windows"         -ForegroundColor Cyan

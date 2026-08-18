@@ -21,6 +21,12 @@ Die Schnellinstallation kann je nach System und Internetverbindung einige Minute
 
 > **Hinweis:** Beim Einfügen des Codeblocks kann PowerShell aus Sicherheitsgründen nachfragen, ob der Text wirklich eingefügt werden soll. Wählen Sie in diesem Fall **„Trotzdem einfügen“**. Während der Installation kann zudem die Windows-Abfrage **„Möchten Sie zulassen, dass durch diese App Änderungen an Ihrem Gerät vorgenommen werden?“** erscheinen. Bestätigen Sie diese mit **„Ja“**, damit die Installation fortgesetzt wird.
 
+> 🛠️ **Problemlösung bei winget-Fehlern (z. B. Zertifikatsfehler):**  
+> Falls `winget` beim Herunterladen von Paketen abbricht oder Zertifikatsfehler anzeigt, führen Sie folgenden Befehl in der PowerShell aus:
+> ```powershell
+> winget settings --enable BypassCertificatePinningForMicrosoftStore
+> ```
+
 ```powershell
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host " HMS-Schnellinstallation – Windows"     -ForegroundColor Cyan
@@ -58,16 +64,6 @@ Write-Host " Ergebnis: $ok ✅  erfolgreich, $fail ❌  fehlgeschlagen" -Foregro
 Write-Host "========================================" -ForegroundColor Cyan
 ```
 
-Achtung: nicht alle Programme sind über winget verfügbar. Alle Programme, die nicht über winget installiert werden können, müssen manuell installiert werden:
-- **ApE**: Download unter [jorgensen.biology.utah.edu/wayned/ape](https://jorgensen.biology.utah.edu/wayned/ape).
-- **CellProfiler**: Download unter [cellprofiler.org](https://cellprofiler.org). Exe-Datei herunterladen, anklicken und das Programm installieren.
-- **ImageJ / Fiji**: Download unter [fiji.sc](https://fiji.sc).
-
-> 💡 **Windows 10: Schritt-für-Schritt-Anleitung für ZIP-Programme (ApE & Fiji):**
-> 1. **ZIP entpacken:** Heruntergeladene `.zip`-Datei im Ordner *Downloads* rechtsklicken → **„Alle extrahieren…“** → unten rechts auf **„Extrahieren“** klicken.
-> 2. **Ordner umbenennen:** Den neu entstandenen entpackten Ordner rechtsklicken → **„Umbenennen“** → Name exakt in `ApE` bzw. `Fiji` ändern.
-> 3. **Nach `C:\Program Files` verschieben:** Den Ordner ausschneiden (`Strg + X`), zu **Dieser PC → Lokaler Datenträger (C:) → Program Files** (bzw. `Programme`) navigieren und dort einfügen (`Strg + V`). Die Administratorabfrage mit **„Fortsetzen“** bestätigen.
-
 ---
 
 ## macOS (Homebrew)
@@ -102,9 +98,6 @@ casks=(
   rectangle
   adobe-creative-cloud
   blender
-  ape
-  fiji
-  cellprofiler
   mega
   prism
   geogebra
