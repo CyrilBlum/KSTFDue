@@ -115,6 +115,9 @@ GraphPad Prism ist ein kostenpflichtiges Programm zur Erstellung wissenschaftlic
 winget install -e --id GraphPad.Prism --scope machine --silent --accept-package-agreements --accept-source-agreements --silent
 ```
 
+> 💡 **Problemlösung bei Fehler `403 Forbidden` / *„Nicht zulässig“*:**  
+> Falls `winget` mit einem 403-Fehler abbricht (aufgrund von Schul-Firewalls, IP-Sperren oder dem DDoS-Schutz des Herstellers), laden Sie GraphPad Prism manuell über den Browser unter [graphpad.com/updates](https://www.graphpad.com/updates) herunter und führen Sie die `.exe`-Datei aus.
+
 Die Aktivierung des Programms erfolgt über eine institutionelle Lizenz. Für den Zugang an die Ansprechpersonen wenden.
 
 ### macOS
